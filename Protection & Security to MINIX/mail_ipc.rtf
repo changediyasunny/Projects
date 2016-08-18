@@ -1,0 +1,402 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil Consolas;}}
+{\colortbl ;\red0\green0\blue0;\red127\green0\blue85;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\lang1033\f0\fs22 #include<stdio.h>\par
+#include "mail_ipc.h"\par
+#include "pm.h"\par
+#include <minix/callnr.h>\par
+#include <minix/com.h>\par
+#include <minix/type.h>\par
+#include <stdlib.h>\par
+#include <string.h>\par
+#include "param.h"\par
+#include<lib.h>\par
+\par
+\par
+/*-----MY System Calls Start Here.....*/\par
+\par
+\par
+int do_minit()\par
+\{\par
+\tab printf("\\n SYSCALL: MINIT...mailbox.c file");\par
+\tab mailbox_init();\par
+\tab return 1;\par
+\}\par
+\par
+int do_msearch()\par
+\{\par
+\tab //103: MSEARCH\par
+\tab int user_id, regnum, mailbox_id, ret=0, flag;\par
+\tab char name[100];\par
+\tab bzero(name,100);\par
+\par
+\tab printf("\\n SYSCALL: MSEARCH Function...");\par
+\par
+\tab user_id=m_in.m7_i1;\par
+\tab regnum=m_in.m7_i2;\par
+\tab mailbox_id=m_in.m7_i3;\par
+\tab flag=m_in.m7_i4;\par
+\par
+\tab sys_datacopy(m_in.m_source, (vir_bytes) m_in.m7_p1, PM_PROC_NR,\par
+\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab\tab (vir_bytes)name, 100);\par
+\par
+\tab printf("\\n Mail_ipc.c: MSEARCH: name=%s, sid=%d & regnum=%d & MID=%d & flag=%d",\par
+\tab\tab\tab name,user_id, regnum, mailbox_id,flag);\par
+\par
+\tab ret=search_list(name, user_id, regnum, mailbox_id, flag);\par
+\tab printf("\\n MSEARCH: ret=%d", ret);\par
+\tab return ret;\par
+\}\par
+\par
+int do_remuser()\par
+\{\par
+\tab int user_id, mailbox_id, user_flag;\par
+\par
+\tab user_id=m_in.m7_i1;\par
+\tab mailbox_id=m_in.m7_i2;\par
+\tab user_flag=m_in.m7_i3;\par
+\par
+\tab int ret;\par
+\tab ret = remove_user(user_id, mailbox_id, user_flag);\par
+\tab return ret;\par
+\}\par
+\par
+\par
+int do_mcreate()\par
+\{\par
+\tab //Create New Mailbox...\par
+\tab printf("\\n SYSCALL: MINIT...mail_ipc.c file");\par
+\tab int ret =1;\par
+\par
+\tab int ownID, no_of_sender, no_of_recv, type;\par
+\tab char name[100];\par
+\par
+\tab ownID = m_in.m7_i1;\par
+\tab no_of_sender = m_in.m7_i2;\par
+\tab no_of_recv = m_in.m7_i3;\par
+\tab type = m_in.m7_i4;\par
+\par
+\tab sys_datacopy(m_in.m_source, (vir_bytes) m_in.m7_p1, PM_PROC_NR,\par
+\tab\tab\tab\tab (vir_bytes)name, 100);\par
+\par
+\tab printf("\\nDO-CREATE: send=%d, recv=%d, type=%d, name=%s", no_of_sender, no_of_recv,\par
+\tab\tab\tab type,name);\par
+\par
+\par
+\tab ret = mail_init(ownID, name, no_of_sender, no_of_recv, type);\par
+\par
+\tab if (ret == -1)\par
+\tab\{\par
+\tab\tab printf("\\n Mailbox Count reached it's peak...");\par
+\tab\tab return ret;\par
+\tab\}\par
+\tab printf("\\n Mail_IPC: ret received...%d", ret);\par
+\par
+\tab return ret;\par
+\}\par
+\par
+/*\par
+ * Change permissions of Owner/ Sender/ Receiver\par
+ * */\par
+int do_changep(void)\par
+\{\par
+\tab //SYSCALL : 97\par
+\tab printf("\\n SYSCALL; DO_CHANGEP");\par
+\tab char perm[100];\par
+\tab int ID, regnum, mailbox_id;\par
+\tab int ret;\par
+\par
+\tab ID = m_in.m7_i1;\par
+\tab mailbox_id = m_in.m7_i2;\par
+\tab regnum = m_in.m7_i3;\par
+\par
+\tab sys_datacopy(m_in.m_source, (vir_bytes) m_in.m7_p1, PM_PROC_NR,\par
+\tab\tab\tab\tab (vir_bytes)perm, 100);\par
+\par
+\tab ret = change_perm(ID, mailbox_id, perm);\par
+\par
+\tab return ret;\par
+\}\par
+\par
+int do_snap()\par
+\{\par
+\tab int i, mailbox_id;\par
+\par
+\tab char temp1[100], temp2[100];\par
+\tab bzero(temp2,100);\par
+\tab bzero(temp1,100);\par
+\par
+\tab mailbox_id=m_in.m7_i1;\par
+\par
+\tab if(mailbox_id == OWNER_LIST)  //Owner List Display option...\par
+\tab\{\par
+\tab\tab printf("\\n Owner List Display...");\par
+\par
+\tab\tab for(i=0; i<no_of_owner; i++)\par
+\tab\tab\{\par
+\tab\tab\tab sprintf(temp1,"%d", owner[i].OID);\par
+\tab\tab\tab strcat(temp2, temp1);\par
+\tab\tab\tab strcat(temp2, "(");\par
+\tab\tab\tab strcat(temp2,owner[i].priv);\par
+\tab\tab\tab strcat(temp2, ")");\par
+\tab\tab\tab strcat(temp2, "-->");\par
+\tab\tab\}\par
+\tab\tab strcat(temp2,"\\0");\par
+\tab\tab printf("\\n Owner-List=%s", temp2);\par
+\tab\tab sys_datacopy(PM_PROC_NR, (vir_bytes) temp2,\par
+\tab\tab\tab\tab\tab     \tab\tab m_in.m_source,(vir_bytes) m_in.m7_p2, sizeof(temp2));\par
+\tab\}\par
+\tab else //Any Other Sender/Receiver List display...\par
+\tab\{\par
+\tab\tab printf("\\n Send/Recv Display...");\par
+\par
+\tab\tab for(i=0; i < mailbox[mailbox_id]->total_user; i++)\par
+\tab\tab\{\par
+\tab\tab\tab sprintf(temp1,"%d", mailbox[mailbox_id]->user_list[i].user_id);\par
+\tab\tab\tab strcat(temp2, temp1);\par
+\tab\tab\tab sprintf(temp1, "%d", mailbox[mailbox_id]->user_list[i].send_bit);\par
+\tab\tab\tab strcat(temp2, "(");\par
+\tab\tab\tab strcat(temp2, temp1);\par
+\tab\tab\tab strcat(temp2, "/");\par
+\tab\tab\tab sprintf(temp1, "%d", mailbox[mailbox_id]->user_list[i].recv_bit);\par
+\tab\tab\tab strcat(temp2, temp1);\par
+\tab\tab\tab strcat(temp2, ")");\par
+\tab\tab\tab strcat(temp2, "->");\par
+\tab\tab\}\par
+\tab\tab strcat(temp2,"\\0");\par
+\tab\tab //M7_P2....used as sender list store..\par
+\tab\tab printf("\\n UserLIST in MAIL-IPC: %s", temp2);\par
+\tab\tab sys_datacopy(PM_PROC_NR, (vir_bytes) temp2,\par
+\tab\tab\tab\tab\tab     \tab\tab m_in.m_source,(vir_bytes) m_in.m7_p2, strlen(temp2));\par
+\par
+\par
+\tab\tab char temp[500];\par
+\tab\tab bzero(temp, 500);\par
+\tab\tab printf("\\n MAIL-IPC: Display of Actual Message;");\par
+\tab\tab for(i=0; i<mailbox[mailbox_id]->mail_cnt; i++)\par
+\tab\tab\{\par
+\tab\tab\tab //Message copy...\par
+\tab\tab\tab strcat(temp, mailbox[mailbox_id]->msgList[i].mesg);\par
+\tab\tab\tab strcat(temp, "->");\par
+\tab\tab\}\par
+\tab\tab //M7_P1...used as message\par
+\tab\tab strcat(temp, "\\0");\par
+\tab\tab sys_datacopy(PM_PROC_NR, (vir_bytes) temp,\par
+\tab\tab\tab\tab\tab     \tab\tab m_in.m_source,(vir_bytes) m_in.m7_p1,strlen(temp));\par
+\tab\}\par
+\par
+\tab return 0;\par
+\}\par
+\par
+\par
+int do_msender(void)\par
+\{\par
+\tab //SYSCALL: 108\par
+\tab int sid, regnum, mailbox_id;\par
+\tab int ret;\par
+\par
+\tab printf("SYSCALL: MSENDER: into Mail_ipc.c");\par
+\par
+\tab sid = m_in.m7_i1;\par
+\tab regnum = m_in.m7_i2;\par
+\tab mailbox_id = m_in.m7_i3;\par
+\par
+\tab printf("\\n Mail_ipc.c: MSENDER: sid=%d & regnum=%d & MID=%d", sid, regnum, mailbox_id);\par
+\par
+\tab if(mailbox_id == -2)  //-2 for Owner Registration...\par
+\tab\{\par
+\tab\tab // It's a owner registration...goto Owner List\par
+\tab\tab ret = add_owner_list(sid, regnum, mailbox_id);\par
+\tab\}\par
+\tab else\par
+\tab\{\par
+\tab\tab //It's a sender registration...goto Sender List\par
+\tab\tab ret = add_user_list(sid, regnum, mailbox_id);\par
+\tab\}\par
+\par
+\tab return ret;\par
+\par
+\}\par
+\par
+int do_mreciver(void)\par
+\{\par
+\tab //SYSCALL: 109\par
+\tab int rid, regnum, mailbox_id;\par
+\tab int ret;\par
+\par
+\tab printf("SYSCALL: Mreciver: into mail_ipc.c");\par
+\par
+\tab rid = m_in.m7_i2;\par
+\tab regnum= m_in.m7_i1;\par
+\tab mailbox_id=m_in.m7_i3;\par
+\par
+\tab printf("\\n mail_ipc.c: MRECEIVER: sid=%d & regnum=%d & MbID=%d", rid, regnum, mailbox_id);\par
+\tab ret=add_recv_list(rid, regnum, mailbox_id);\par
+\par
+\tab return ret;\par
+\}\par
+\par
+\par
+int do_usrsend(void)\par
+\{\par
+\tab //actual syscall to deposite message; 69:USRSEND\par
+\tab int ret;\par
+\tab int destrec[5], mailbox_id, no_of_recv;\par
+\tab printf("\\n SYSCALL: USRSEND system call in mailbox...");\par
+\par
+\tab char mesg[100];\par
+\par
+\tab //copy the message from PM-->MESG\par
+\tab sys_datacopy(m_in.m_source, (vir_bytes) m_in.m7_p1, PM_PROC_NR,\par
+\tab\tab\tab (vir_bytes)mesg, 100);\par
+\par
+\tab strcat(mesg,"\\0");\par
+\par
+\tab //copy recv count & ID of it's mailbox...\par
+\tab mailbox_id=m_in.m7_i1;\par
+\tab no_of_recv=m_in.m7_i2;\par
+\par
+\tab destrec[0]=m_in.m7_i3;\par
+\tab destrec[1]=m_in.m7_i4;\par
+\tab destrec[2]=m_in.m7_i5;\par
+\par
+\tab printf("\\n mail_ipc.c: MSG=%s & MID=%d & NO-REC=%d", mesg,mailbox_id,no_of_recv);\par
+\par
+\tab ret=mail_insert(mesg, no_of_recv, destrec, mailbox_id);  //called to mailboxq.c\par
+\par
+\tab return ret;\par
+\}\par
+\par
+int do_usrrecive()\par
+\{\par
+\tab printf("\\n SYSCALL: USRRECIVE system call in mailbox...");\par
+\tab int i, mailbox_id;\par
+\tab char *mesg1[100], temp[100];\par
+\tab int rd, ret;\par
+\par
+\tab bzero(temp,100);\par
+\par
+\tab mailbox_id=m_in.m7_i1;\par
+\tab rd=m_in.m7_i2;\par
+\par
+\tab ret=mail_receive(mesg1, rd, mailbox_id);\par
+\par
+    if(ret > 0)\par
+\tab\{\par
+\tab\tab //printf("\\n message received in PM=%s ", mesg1[0]);\par
+\tab\tab i=0;\par
+    \tab while(i < ret)\par
+    \tab\{\par
+    \tab\tab strcat(temp, mesg1[i]);\par
+    \tab\tab strcat(temp, "->");\par
+    \tab\tab i++;\par
+    \tab\}\par
+\par
+\tab\tab sys_datacopy(PM_PROC_NR, (vir_bytes) temp,\par
+\tab\tab     \tab\tab m_in.m_source,(vir_bytes) m_in.m7_p1, MAX_MESG_LEN);\par
+\tab\tab return ret;\par
+\tab\}\par
+\tab else\par
+\tab\tab printf("\\n mail nahi hai bhaiii...");\par
+\par
+\tab return 0;\par
+\}\par
+\par
+int do_denyaccess()\par
+\{\par
+\tab //110: DENYACCESS\par
+\tab int userid, mailbox_id, bit, flag;\par
+\tab int ret;\par
+\par
+\tab userid=m_in.m7_i1;\par
+\tab mailbox_id=m_in.m7_i2;\par
+\tab bit=m_in.m7_i3;\par
+\tab flag=m_in.m7_i4;\par
+\par
+\tab ret=deny_access(userid,mailbox_id,bit,flag);\par
+\par
+\tab return ret;\par
+\}\par
+\par
+int do_mgarbage()\par
+\{\par
+\tab /*\par
+\tab  * 56 : MGARBAGE\par
+\tab  * */\par
+\tab int val = m_in.m7_i1;\par
+\tab int mailbox_id=m_in.m7_i2;\par
+\par
+\tab printf("\\nSYSCALL: Mailbox Garbage Program :)...");\par
+\tab if(val == 1)  //CLEAR OWNER LIST\par
+\tab\{\par
+\tab\tab printf("\\n Garbage collecting Owner Lists...");\par
+\tab\tab memset( owner_list,0, sizeof(owner_list) );\par
+\tab\tab no_of_owner=0;\par
+\tab\tab return val;\par
+\tab\}\par
+\tab else if(val == 2)  //CLEAR USER LIST\par
+\tab\{\par
+\tab\tab printf("\\n Garbage collecting Receiver Lists...");\par
+\tab\tab memset(mlist, 0, sizeof(struct mailbox_name_id_list) );\par
+\tab\tab //memset(user_list,0, sizeof(user_list) );\par
+\tab\tab //total_public_user = 0;\par
+\tab\tab return val;\par
+\tab\}\par
+\tab else if(val == -1 && mailbox_id >= 0)  //CLEAR MAILBOX\par
+\tab\{\par
+\tab\tab printf("\\n Garbage collecting MAILBOX Lists...");\par
+\tab\cf1\f1\fs20\tab memset(mailbox[mailbox_id],0,\cf2\b sizeof\cf1\b0 (\cf2\b struct\cf1\b0  mailbox_node));\cf0\par
+\cf1\tab\tab mailbox[mailbox_id]->mail_cnt=0;\cf0\par
+\cf1\tab\tab memset(mailbox[mailbox_id]->user_list,0,\cf2\b sizeof\cf1\b0 (mailbox[mailbox_id]->user_list));\cf0\par
+\f0\fs22\par
+\tab\tab return val;\par
+\tab\}\par
+\par
+\tab return val;\par
+\}\par
+\par
+/*int do_halt_recover()\par
+\{\par
+\tab //35: Mailbox do_halt_recover\par
+\par
+\tab int i, j, k, count;\par
+\tab char temp1[100], temp2[100];\par
+\tab bzero(temp1, 100);\par
+\tab bzero(temp2, 100);\par
+\par
+\tab for(j=0; j<no_of_recv; j++)\par
+\tab\{\par
+\tab\tab count=0;\par
+\tab\tab for(i=0; i<mail_cnt; i++)\par
+\tab\tab\{\par
+\tab\tab\tab for(k=0; k<3; k++)\par
+\tab\tab\tab\{\par
+\tab\tab\tab\tab if(recv_list[j] == mailbox[i].msgList.reclist[k])\par
+\tab\tab\tab\tab\{\par
+\tab\tab\tab\tab\tab count++;\par
+\tab\tab\tab\tab\tab snapshot[j].recv_id=recv_list[j];\par
+\tab\tab\tab\tab\tab snapshot[j].pending_mesg=count;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\}\par
+\tab for(i=0; i<j; i++)\par
+\tab\{\par
+\tab\tab sprintf(temp1,"%d", snapshot[i].recv_id);\par
+\tab\tab strcat(temp2,temp1);\par
+\tab\tab strcat(temp2,"/");\par
+\par
+\tab\tab sprintf(temp1, "%d", snapshot[i].pending_mesg);\par
+\tab\tab strcat(temp2,temp1);\par
+\tab\tab strcat(temp2, "->");\par
+\tab\}\par
+\par
+\tab sys_datacopy(PM_PROC_NR, (vir_bytes) temp2,\par
+\tab\tab\tab\tab\tab     \tab\tab m_in.m_source,(vir_bytes) m_in.m7_p1, strlen(temp2));\par
+\par
+\tab return 0;\par
+\}\par
+*/\par
+\par
+\par
+}
+ 
