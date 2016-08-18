@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+  {% include 'blocks/navbar.html' %}
+{% endblock %}
+
+{% block rightNavPanel %}
+  <h1>NEW FEATURES</h1>
+  <ul>
+    <li><strong>New core</strong> based on an API (the API is located at http://cradm002.aws.cccis.com/api)</li>
+    <li><strong>New navigation bar</strong></li>
+    <li><strong>Concurrency support</strong> (multiple clients)</li>
+    <li><strong>Stability improvements</strong> (should not hang anymore)</li>
+    <li>Actions <strong>running in background</strong> (except for status action) for max concurrency. Access to a logfile is available afterwards (column logfile in the 'Action summary' section)</li>
+    <li><strong>Authentication</strong>
+      <ul>
+        <li>Basic HTTP Authentication (UI / API)</li>
+        <li>Token-based authentication (UI)</li>
+        <li>Group-based access (API)</li>
+        <li>Login Page</li>
+      </ul>
+    </li>
+    <li><strong>OHS support</strong> for status / start / stop. A 'start' action will be converted in 'startall' action for OHS, and 'stop' into 'stopall'.</li>
+  </ul>
+  <br>
+  <h1>UPCOMING</h1>
+  <ul>
+    <li><strong>Status table for all domains</strong> always available</li>
+    <li><strong>Stream logs</strong> after action has been run</li>
+    <li><strong>Support for ElasticSearch</strong> control</li>
+    <li><strong>Support for VindeCode</strong> control</li>
+    <li><strong>Setting.xml UI</strong> [Integration] (Sunny)</li>
+    <li><strong>Log querying</strong> for exceptions / errors [Integration] (Martin)</li>
+    <li><strong>Weblogic Template Validator</strong> utility [Integration]</li>
+  </ul>
+  <br>
+  <h1>TECHNOLOGY STACK (full-stack Python)</h1>
+  <br>
+  <h2><strong>API</strong></h2>
+  <ul>
+    <li>Flask webserver</li>
+    <li>Gunicorn WSGI server for multiple clients support</li>
+    <li>Fabric library to run commands in parallel on servers</li>
+    <li>SQL-Alchemy database for storing usernames and associated tokens</li>
+  </ul>
+  <br>
+  <h2><strong>UI</strong></h2>
+  <ul>
+    <li>Flask webserver + Flask-SocketIO for streamed events</li>
+    <li>Gunicorn WSGI server for multiple clients support</li>
+    <li>Nginx as reverse HTTP proxy - Handles / and /api endpoints for two apps running on different pots + load balancing</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript (JQuery)</li>
+  </ul>
+  <br>
+  <h1> ARCHITECTURE </h1>
+  <br>
+  <img src="{{ url_for('static', filename='images/adminconsole_architecture.png') }}" alt="">
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+  {% include 'blocks/navbar.html' %}
+{% endblock %}
+
+{% block rightNavPanel %}
+  <div class="login_wrapper" >
+    <form method="POST" role="form" class="form-signin" action="/login" name="loginForm">
+      <h1 class="form-signin-heading">Sign In</h1>
+      <br>
+      {{ form.username(class_="form-control",placeholder="UserID") }}
+      {{ form.password(class_="form-control",placeholder="Password") }}
+      <br>
+      <p><input type=submit value=Login>
+      </form>
+      {% if ERROR_MSG %}
+        <div class="alert alert-danger" style="font-family:san serif;font-size:20px;">
+          <strong>Error! </strong>{{ERROR_MSG}}
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}

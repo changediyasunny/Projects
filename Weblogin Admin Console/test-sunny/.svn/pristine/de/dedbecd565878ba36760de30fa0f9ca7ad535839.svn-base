@@ -1,0 +1,357 @@
+# SVN dir: http://svn.proddev.cccis.com:8090/svn/build-support/trunk/hudson-settings-xml/
+
+
+from collections import defaultdict
+import subprocess
+import os, shutil
+import sys
+import re
+from bs4 import BeautifulSoup, Comment
+from urllib.request import urlopen, urlretrieve
+
+SVN_DIR = os.getcwd()+"/test-sunny"
+
+#Temp File When Update is clicked...
+temp_file = "temp.xml"
+
+
+def commit_to_server(mesg):
+
+	cmt_msg = str(mesg)
+	print("Commit-to Server:Mesg Is %s" %cmt_msg)
+
+	#make update only when UPDATE actually happened, else use original dict
+	
+	if len(cmt_msg):
+		#print("update-dict is clicked...")
+		
+		if os.path.isfile(temp_file):	#If File existrs there...
+			# Rename that file...
+			os.system('mv temp.xml settings.xml')
+			print("file renamed...")
+		else:
+			#No Update processed yet...
+			print("Commit: No changes made to File ")
+			return False
+		
+		
+		# This will execute only when an update is made on file...
+		
+		# This returns the destination address..."shutil.move: does not override contents
+		try:
+			dest_addr = shutil.copy("/root/Desktop/test/work/settings.xml", "/root/Desktop/test/work/test-sunny/")
+			print(dest_addr)
+			if dest_addr == SVN_DIR:
+				print("file copied to SVN")
+		except:
+			print("SVNCopy does not happened")
+		
+		
+		#print("goint to execute SVN COMMANDS...")
+		try:
+			proc = subprocess.Popen(['svn','update'], cwd=SVN_DIR)
+			proc.wait()
+		except:
+			print("SVN update failed...")
+		
+		#vals = subprocess.check_call(['svn','update'])
+		#print(vals)
+		#print("SVN CI command")
+		try:
+			vals = subprocess.Popen(['svn','commit','-m',cmt_msg], cwd=SVN_DIR)
+			vals.wait()
+		except:
+			print("SVn Commit failed...")
+			
+	else:
+		print("Invalid message: cannot commit")
+
+	return True
+
+
+class Domain(object):
+
+
+	def __init__(self, dom=None):
+
+		self.domain_id = "deployment."+dom.lower()
+		self.fname = SVN_DIR+"/settings.xml"
+		self.temp_file = "temp.xml"
+		self.search_list = []
+		#print(self.final_update_dict)
+		self.update_dict = {}
+
+		if dom:
+			self.soup = self.get_xml_file()
+			self.env_dict = self.get_env_data()
+			self.envir_list = self.get_env_var()
+			#self.update_dict = self.create_update_file(self.update_dict)
+			#self.update_dict = self.update_xml_file([])
+			#self.vals = self.commit_to_server("", self.update_dict)
+		else:
+			print("Usage: <domain.py> <environment_name>")
+			sys.exit(0)
+
+
+	def create_update_file(self, up_dict):
+
+		print("into create-update-file")
+
+		if len(up_dict) < 1:
+			return up_dict
+
+		new_fp = open(self.temp_file,"w")
+		#precious variables.....
+		id_flag = False
+		found = False
+		validate = False
+		check_id = "<id>"+self.domain_id+"</id>"
+		#reading from old file now...
+		old_fp = open(self.fname, "r")
+		# Get updated dict into main DICT...CRucial Step..Be carefull...
+
+		print("SELF UPDATE-DICT afetr Update...")
+		#self.update_dict = update_dict # self.update_dict
+		self.env_dict = up_dict
+		print(self.env_dict)
+
+		for line in old_fp.readlines():
+			#This is precious... Handle with care
+			if validate == False and str(line).strip() == check_id:
+				id_flag = True	#Only when ID is found
+			elif validate == False and id_flag and str(line).strip() == "<properties>":
+				found = True	#only when ID found & properties start there
+
+			#Go for it Now....
+			if id_flag and found:	#ohhh both conditions satisfies now.... Insert all the items...
+				new_fp.write("<properties>"+'\n')
+				for keys, vals in self.env_dict.items():
+					if len(vals) > 0:
+						result = "<"+keys+">"+str(vals)+"</"+keys+">"
+					else:
+						result = "<"+keys+">"
+					new_fp.write(str(result)+'\n')
+
+				"""Handle with care..."""
+				validate = True
+				id_flag = False
+				found = False
+			elif validate == True and str(line).strip() != "</properties>":
+				#Only when, ID-->Properties Match there...//
+				continue
+			else:
+				validate = False
+				new_fp.write(line)
+
+		new_fp.close()
+		old_fp.close()
+		return up_dict
+	#END oF GET_UPDATE-XML FIle........................
+
+	def update_xml_file(self, update_list):
+
+		updat_dict = {}
+		#Just for FUn...Have Keys dict
+		for keys, vals in self.env_dict.items():
+			self.search_list.append(keys)
+
+		# Handle with care... This is Updated DICT...
+		if len(update_list):
+			for data in update_list:
+				txt = str(data)
+				tag_name, tag_val = self.regex_tag_vals(txt)
+				if len(tag_name) > 0 or len(tag_val) > 0:
+					updat_dict[tag_name] = tag_val
+
+			print("Going from Update-xml-file function...")
+			self.update_dict = self.create_update_file(updat_dict)
+
+		return self.update_dict
+
+
+	def get_xml_file(self):
+
+		#Get the data from SERVER...
+		"""
+		try:
+			html = urlopen("http://svn.proddev.cccis.com:8090/svn/build-support/trunk/hudson-settings-xml/settings.xml")
+			urlretrieve("http://svn.proddev.cccis.com:8090/svn/build-support/trunk/hudson-settings-xml/settings.xml", "settings.xml")
+
+		except:
+			print("Soup Failed")
+		"""
+
+		#Open & Read XML File...
+		with open(self.fname, "r+") as fp:
+			sop = BeautifulSoup(fp,'xml')
+
+		self.soup = sop
+
+		return self.soup
+	# FILE GOT...
+
+
+	def find_domain(self):
+
+		list1 = []
+
+		for child in self.soup.findAll("profile"):
+			if str(child.id.text).strip() == self.domain_id:
+				list1 = list(child.properties)
+				break
+
+		temp_list = []
+
+		for line in list1:
+
+			if isinstance(line, Comment):
+				continue
+			else:
+				var = str(line).strip()
+				if var != '\n' and len(var)>0:
+					temp_list.append(var)
+
+		return temp_list
+	#END of FIND-DOMAIN.........................
+
+	
+	def get_env_var(self):
+		
+		env_list = []
+		
+		for child in self.soup.findAll("profile"):
+			
+			if str(child.id.text).strip().startswith("deployment."):
+				env_text = str(child.id.text).strip()
+				env_var = env_text[11:] #extract "deployment."
+				env_list.append(env_var)
+		
+		print("into environment")
+		#print(env_list)
+		
+		return env_list
+		
+		
+	def get_env_data(self):
+
+		#Data got into list...
+
+		list1 = self.find_domain()
+		my_dict = {}
+
+		for data in list1:
+
+			if data.startswith("<"):	#No Need But still check: for whether it is comment
+
+				my_list = re.sub(r'[<>]',' ', data).split()
+
+				if len(my_list) > 2:
+
+					#we have TAG-->text-->TAG
+					my_tag = str(my_list[0])
+					my_text = str(my_list[1])
+					my_dict[my_tag] = my_text
+
+				else:
+					#Only <TAG></TAG>
+					my_dict[my_list[0]] = ''
+
+		#FOR Ends Heere.....
+		#print(my_dict)
+		return my_dict
+	#END of GET-ENV-DATA....................
+
+
+	def search_tags(search_list, choice_key):
+
+		found = False
+
+		if choice_key in search_list:
+			print(choice_key)
+			found = True
+		else:
+			print("No such TAG exists: Try Again !")
+
+		return found
+
+	#END of SEARCH-TAGS
+
+
+
+	def regex_tag_vals(self,text):
+
+		tv_list = text.split("-->>")
+
+		#TAG contains LINE-BREAK
+		if tv_list[0].endswith("<br>"):
+			tag_name = tv_list[0].replace("<br>","").strip()
+		else:
+			tag_name = tv_list[0].strip()
+
+		#VALUE contains LINE-BREAK
+		if tv_list[1].endswith("<br>"):
+			tag_val = tv_list[1].replace("<br>","").strip()
+		else:
+			tag_val = tv_list[1].strip()
+
+		return tag_name, tag_val
+
+
+
+	def indent():
+
+		with open(os.getcwd()+"/"+self.temp_file,'r') as fp:
+			file_lines = fp.readlines()
+
+		fp1 = open(os.getcwd()+"/"+self.temp_file,'w+')
+		for line in file_lines:
+			self.soup = BeautifulSoup(line, 'xml')
+			print(self.soup.prettify())
+			fp1.write( self.soup.prettify() )
+		#print(soup)
+		fp1.close()
+
+	#END of INDENT ..................................
+
+
+
+
+"""
+def main():
+
+
+	try:
+		html = urlopen("http://svn.proddev.cccis.com:8090/svn/build-support/trunk/hudson-settings-xml/settings.xml")
+		urlretrieve("http://svn.proddev.cccis.com:8090/svn/build-support/trunk/hudson-settings-xml/settings.xml", "settings.xml")
+
+	except HTTPError as e:
+		print(e)
+
+
+	with open(os.getcwd()+"/"+self.fname, "r+") as fp:
+		self.soup = BeautifulSoup(fp,'xml')
+
+
+	#temp = "dev0"
+	#Using Beautiful Soup...TOD0: use XMl parsing tree
+
+	#soup = BeautifulSoup(html.read(), "lxml")
+
+	#Get domain string
+	#domain_id = "deployment."+temp #str(sys.argv[1])
+
+	#domain_id = "deployment.dev0"
+
+	if len(sys.argv) == 2:# and sys.argv[1] == '-s' and sys.argv[3] == '-w'
+
+		domain_obj = Domain(self.soup, str(sys.argv[1]))
+
+
+	else:
+		print("Usage: <test.py> <environment_name>")
+		sys.exit(0)
+
+
+if __name__ == '__main__':
+	main()
+"""

@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<servers>
+		<server>
+			<id>snapshots</id>
+			<username>deployment</username>
+			<password>{YZKx/w/qyEYHLyG9ML5se3pjqSTgyc8l+suJpMTrb10=}</password>
+		</server>
+		<server>
+			<id>releases</id>
+			<username>deployment</username>
+			<password>{YZKx/w/qyEYHLyG9ML5se3pjqSTgyc8l+suJpMTrb10=}</password>
+		</server>
+		<server>
+			<id>cideploy-ssh-server</id>
+			<username>cideploy</username>
+		</server>
+	</servers>
+	<activeProfiles>
+		<activeProfile>alwaysActiveProfile</activeProfile>
+	</activeProfiles>
+
+	<!-- pluginGroups
+ | This is a list of additional group identifiers that will be searched 
+ | when resolving plugins by their prefix, for example, when invoking a  
+ | command line like "mvn prefix:goal". Maven will automatically add the 
+ | group identifiers "org.apache.maven.plugins" and "org.codehaus.mojo"
+ | if theses are not already contained in the list.
+ | -->
+	<pluginGroups>
+		<!-- pluginGroup
+      | Specifies a further group identifier to use for plugin lookup.
+    -->
+		<pluginGroup>com.oracle.weblogic</pluginGroup>
+		<pluginGroup>com.cccis.build.maven</pluginGroup>
+	</pluginGroups>
+
+	<profiles>
+		<profile>
+			<id>int1</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int1</value>
+				</property>
+			</activation>
+			<properties>
+				<opmn-deploy.userName>citest</opmn-deploy.userName>
+				<opmn-deploy.password>abcd1234</opmn-deploy.password>
+			</properties>
+		</profile>
+		<profile>
+			<id>int2</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int2</value>
+				</property>
+			</activation>
+			<properties>
+				<opmn-deploy.userName>citest</opmn-deploy.userName>
+				<opmn-deploy.password>abcd1234</opmn-deploy.password>
+			</properties>
+		</profile>
+		<profile>
+			<id>alwaysActiveProfile</id>
+			<properties>
+				<MW_HOME>/buildtools/binaries/wls1211/</MW_HOME>
+				<deployment.logging.db.url>jdbc:mysql://citool01a.pi.cccis.com:3306/devops</deployment.logging.db.url>
+				<oracle.fmw.soa.home>/buildtools/binaries</oracle.fmw.soa.home>
+				<oracle.fmw.productName>oraclesoa_11116</oracle.fmw.productName>
+				<corporate-pom.commit-message>B-35993 B-34887: Add JRebel profiles, Fix a defect in corporate pom update profile, Use latest version of Cobertura B-30019: Fix auto version update mechanisms for base and chef corporate-pom.  Move some java specific properties to corporate-pom.</corporate-pom.commit-message>
+				<database.oracle.driver.class>oracle.jdbc.OracleDriver</database.oracle.driver.class>
+				<!-- <deployment-maven-plugin.version>0.0.41</deployment-maven-plugin.version> -->
+			</properties>
+			<repositories>
+				<repository>
+					<id>central</id>
+					<name>CCC Public Repository</name>
+					<url>http://mavencentral.cccis.com/content/groups/public/</url>
+					<layout>default</layout>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
+			<id>deployment.dev0</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev0</value>
+				</property>
+			</activation>
+			<properties>
+<database.url.MESG>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MESGDA</database.url.MESG>
+<database.url.SESBCF>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/SESBCFDA</database.url.SESBCF>
+<weblogic.targets.fnol2/>
+<database.url.VI>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VID</database.url.VI>
+<weblogic.adminurl.workflow-aps>t3://adm301.da.cccis.com:9309</weblogic.adminurl.workflow-aps>
+<weblogic.adminurl.x86.msg2>t3://adm001.da.cccis.com:9318</weblogic.adminurl.x86.msg2>
+<weblogic.adminurl.x86.msg1>t3://adm001.da.cccis.com:9316</weblogic.adminurl.x86.msg1>
+<weblogic.targets.mstrcls>MSTR_MSTR_CLSTR_001</weblogic.targets.mstrcls>
+<database.url.VALRP>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VALRPDA</database.url.VALRP>
+<weblogic.adminurl.x86.intfin>t3://adm001.da.cccis.com:9314</weblogic.adminurl.x86.intfin>
+<weblogic.adminurl.x86.idm>t3://adm001.da.cccis.com:9304</weblogic.adminurl.x86.idm>
+<database.url.CRP>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CRPDA</database.url.CRP>
+<database.url.EZNETII>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/EZNETIIDA</database.url.EZNETII>
+<database.url.PANALYTICS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PANALYTICSDA</database.url.PANALYTICS>
+<database.url.PTLWEB>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PTLWEBDA</database.url.PTLWEB>
+<weblogic.targets.webapps-smgt5/>
+<database.url.PARTSDWAPS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PARTSDWAPSD</database.url.PARTSDWAPS>
+<weblogic.adminurl.x86.css>t3://adm101.da.cccis.com:9319</weblogic.adminurl.x86.css>
+<database.url.PARTSDWRPS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PARTSDWRPSD</database.url.PARTSDWRPS>
+<sunny>sunny@dev0</sunny>
+<database.url.LGCYINTF>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/LGCYINTFDA</database.url.LGCYINTF>
+<database.url.NGSCH>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/NGSCHD</database.url.NGSCH>
+<database.url.MAINTARCH>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MAINTARCHDA</database.url.MAINTARCH>
+<sunny-merge>sunny-test</sunny-merge>
+<database.url.B2BVALRP>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/B2BVALRPDA</database.url.B2BVALRP>
+<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.dw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+<database.url.CSS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CSSDA</database.url.CSS>
+<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+<database.url.RPS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/RPSDA</database.url.RPS>
+<database.url.CFARCH>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CFARCHDA</database.url.CFARCH>
+<database.url.PARTSDWCF>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PARTSDWCFD</database.url.PARTSDWCF>
+<weblogic.adminurl.fnol>t3://adm001.da.cccis.com:9310</weblogic.adminurl.fnol>
+<weblogic.adminurl.x86.workflow-aps>t3://adm301.da.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+<database.url.INJS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/INJSDA</database.url.INJS>
+<weblogic.adminurl.x86.vsapps>t3://adm201.da.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+<database.url.BTCHREPETL>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/BTCHREPETLDA</database.url.BTCHREPETL>
+<database.url.B2B>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/B2BDA</database.url.B2B>
+<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.da.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+<database.url.ngsch>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/NGSCHDA</database.url.ngsch>
+<weblogic.targets.x86-vsappsmgmt>VSAPPS_MGMT_CLSTR_001</weblogic.targets.x86-vsappsmgmt>
+<database.url.RPSPREPROC>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/RPSPREPROCD</database.url.RPSPREPROC>
+<weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.da.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+<database.url.CCCONEIDM>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CCCONEIDMDA</database.url.CCCONEIDM>
+<database.url.VLATION>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VLATIONDA</database.url.VLATION>
+<weblogic.adminurl.x86.eznet.temp>t3://adm001.da.cccis.com:9306</weblogic.adminurl.x86.eznet.temp>
+<weblogic.adminurl.x86.fnol>t3://adm001.da.cccis.com:9310</weblogic.adminurl.x86.fnol>
+<database.url.CFGWFLD>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CFGWFLDDA</database.url.CFGWFLD>
+<database.url.esp>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/espd</database.url.esp>
+<database.url.EDIREG>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/EDIREGD</database.url.EDIREG>
+<database.url.BIDW>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/BIDWDA</database.url.BIDW>
+<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+<weblogic.targets.workflow-aps1>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflow-aps1>
+<database.url.BATCHFD>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/BATCHFDDA</database.url.BATCHFD>
+<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+<oracle.bpeldeployurl.eznet>http://eznet001.da.cccis.com:9821</oracle.bpeldeployurl.eznet>
+<weblogic.targets.x86-clstemp>INTF_AAWS_CLSTR_001</weblogic.targets.x86-clstemp>
+<weblogic.targets.fnol1>srvr-intfmwk-001</weblogic.targets.fnol1>
+<weblogic.adminurl.intf>t3://adm001.da.cccis.com:9306</weblogic.adminurl.intf>
+<database.url.HPS>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/HPSDA</database.url.HPS>
+<database.url.MPALD>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MPALD</database.url.MPALD>
+<database.url.MPALDXDB>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MPALDXDBDA</database.url.MPALDXDB>
+<database.url.PWSTGSVC>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PWSTGSVCD</database.url.PWSTGSVC>
+<database.url.MQHUB>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MQHUBDA</database.url.MQHUB>
+<database.url.PROC>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/PROCDA</database.url.PROC>
+<database.url.INTFFRMWK>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/INTFFRMWKDA</database.url.INTFFRMWK>
+<weblogic.adminurl.x86.eznet>t3://adm001.da.cccis.com:9303</weblogic.adminurl.x86.eznet>
+<database.url.MSP>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/MSPDA</database.url.MSP>
+<weblogic.adminurl.x86.idaam>t3://ptlidaam001.da.cccis.com:19307</weblogic.adminurl.x86.idaam>
+<database.url.aps>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/APSDA</database.url.aps>
+<database.url.VLO>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VLODA</database.url.VLO>
+<database.url.VLTN>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VLTNDA</database.url.VLTN>
+<weblogic.adminurl.x86.gpsvcs>t3://gpadm001.da.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+<weblogic.adminurl.x86.obfs>t3://adm001.da.cccis.com:9308</weblogic.adminurl.x86.obfs>
+<database.url.CCCONEVALD>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/CCCONEVALDDA</database.url.CCCONEVALD>
+<database.url.AUDRUL>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/AUDRULDA</database.url.AUDRUL>
+<weblogic.adminurl.x86.reprocess>t3://adm001.da.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+<weblogic.adminurl.x86.workflow>t3://adm301.da.cccis.com:9309</weblogic.adminurl.x86.workflow>
+<database.url.FNOL>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/FNOLDA</database.url.FNOL>
+<weblogic.targets.webapps-smgt3/>
+<weblogic.targets.webapps-smgt4/>
+<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.da.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+<database.url.INTFINBND>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/INTFINBNDDA</database.url.INTFINBND>
+<weblogic.adminurl.x86.btchproc>t3://batchproc001.da.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+<weblogic.adminurl.x86.po1>t3://adm001.da.cccis.com:9302</weblogic.adminurl.x86.po1>
+<database.url.rps>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/RPSD</database.url.rps>
+<test-dev0>work-yar-please</test-dev0>
+<database.url.ILOG>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/ILOGDA</database.url.ILOG>
+<weblogic.adminurl.x86.vsapps2>t3://adm001.da.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+<weblogic.adminurl.x86.wa1>t3://adm001.da.cccis.com:9307</weblogic.adminurl.x86.wa1>
+<weblogic.adminurl.x86.wa3>t3://adm001.da.cccis.com:9317</weblogic.adminurl.x86.wa3>
+<weblogic.adminurl.x86.wa2>t3://adm001.da.cccis.com:9315</weblogic.adminurl.x86.wa2>
+<weblogic.adminurl.x86.wa4>t3://adm202.da.cccis.com:9307</weblogic.adminurl.x86.wa4>
+<weblogic.adminurl.x86.mstr>t3://adm001.da.cccis.com:9311</weblogic.adminurl.x86.mstr>
+<database.url.VLATIOND>jdbc:oracle:thin:@madldb01-scan.cccis.com:1521/VLATIONDDA</database.url.VLATIOND>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.dev</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.fnol>t3://adm001.da.cccis.com:9310</weblogic.adminurl.fnol>
+				<weblogic.adminurl.svsvcs>t3://svsvcsadm001.da.cccis.com:19315</weblogic.adminurl.svsvcs>
+				<weblogic.targets.fnol1>FNOL_PA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>FNOL_PA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3/>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.dev1</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev1</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.css>t3://adm101.da.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.wa1>t3://adm101.da.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.da.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.intf>t3://adm101.da.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+			<!-- LIQUIBASE DB URLS -->			
+			<database.url.APS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/APSDB</database.url.APS>
+			<database.url.B2B>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/B2BDB</database.url.B2B>
+			<database.url.CRP>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CRPDB</database.url.CRP>
+			<database.url.CSS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CSSDB</database.url.CSS>
+			<database.url.FNOL>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/FNOLDB</database.url.FNOL>
+			<database.url.HPS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/HPSDB</database.url.HPS>
+			<database.url.ILOG>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/ILOGDB</database.url.ILOG>
+			<database.url.MSP>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/MSPDB</database.url.MSP>
+			<database.url.RPS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/RPSDB</database.url.RPS>
+			<database.url.VIC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/VICDB</database.url.VIC>
+			<database.url.VLATION>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/VLATIONDB</database.url.VLATION>
+			<!-- END LIQUIBASE DB URLS -->
+
+			</properties>	
+		</profile>
+		<!-- Created new profile for dev2 Environment  -->
+		<profile>
+			<id>deployment.dev2</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev2</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.wa1>t3://adm201.da.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.eznet>t3://adm101.da.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.idm>t3://adm101.da.cccis.com:9304</weblogic.adminurl.x86.idm> 
+				<!-- LIQUIBASE DB URLS -->
+			<database.url.APS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/APSDC</database.url.APS>
+			<database.url.APSDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/APSDCC</database.url.APSDCC>
+			<database.url.B2B>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/B2BDC</database.url.B2B>
+			<database.url.B2BDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/B2BDCC</database.url.B2BDCC>
+			<database.url.CRP>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CRPDC</database.url.CRP>
+			<database.url.CRPDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CRPDCC</database.url.CRPDCC>
+			<database.url.CSS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CSSDC</database.url.CSS>
+			<database.url.CSSDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/CSSDCC</database.url.CSSDCC>
+			<database.url.FNOL>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/FNOLDC</database.url.FNOL>
+			<database.url.FNOLDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/FNOLDCC</database.url.FNOLDCC>
+			<database.url.HPS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/HPSDC</database.url.HPS>
+			<database.url.HPSDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/HPSDCC</database.url.HPSDCC>
+			<database.url.ILOGD>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/ILOGDD</database.url.ILOGD>
+			<database.url.MSP>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/MSPDC</database.url.MSP>
+			<database.url.MSPDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/MSPDCC</database.url.MSPDCC>
+			<database.url.RPS>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/RPSDC</database.url.RPS>
+			<database.url.RPSDCC>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/RPSDCC</database.url.RPSDCC>
+			<database.url.VID>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/VIDD</database.url.VID>
+			<database.url.VLATION>jdbc:oracle:thin:@madldb02-scan.cccis.com:1521/VLATIONDC</database.url.VLATION>
+			<!-- END LIQUIBASE DB URLS -->
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.dev3</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev3</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.wa1>t3://adm201.da.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm201.da.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.msg1>t3://adm201.da.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm201.da.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.intf>t3://adm201.da.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.eznet>t3://adm201.da.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.workflow>t3://adm301.da.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.adminurl.x86.wa3>t3://adm201.da.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.po1>t3://adm201.da.cccis.com:9302</weblogic.adminurl.x86.po1>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm301.da.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<weblogic.adminurl.x86.dataSync>t3://adm301.da.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.workflow-aps1>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2/>
+				<weblogic.targets.workflow-aps3/>				
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<weblogic.adminurl.x86.vsapps>t3://adm201.da.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.dev5</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev5</value>
+				</property>
+			</activation>
+			<properties>
+<weblogic.adminurl.x86.dataSync>t3://rsadm001.da.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+<weblogic.adminurl.x86.ams>t3://rsadm001.dw.cccis.com:11107</weblogic.adminurl.x86.ams>
+<weblogic.adminurl.x86.workflow>t3://rsadm001.da.cccis.com:9309</weblogic.adminurl.x86.workflow>
+<database.url.procurement>jdbc:oracle:thin:@rsdldb01a.cccis.com:1521/PROCD</database.url.procurement>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.dev6</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>dev6</value>
+				</property>
+			</activation>
+			<properties>
+<weblogic.adminurl.intf>t3://10.16.8.13:9306</weblogic.adminurl.intf>
+<weblogic.adminurl.x86.intfin>t3://10.16.4.126:9314</weblogic.adminurl.x86.intfin>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>deployment.int</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.fnol>t3://dgda21cb.cccis.com:9001</weblogic.adminurl.fnol>
+				<!-- Solaris domain  -->
+				<weblogic.targets.fnol1>srvr-intfmwk-001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2/>
+				<weblogic.targets.fnol3/>
+				<weblogic.adminurl.workflow-aps>t3://dgia21b.cccis.com:9004</weblogic.adminurl.workflow-aps>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2/>
+				<weblogic.targets.workflow-aps3/>
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<weblogic.adminurl.workflow-egn>t3://dgda21cc.cccis.com:9004</weblogic.adminurl.workflow-egn>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<weblogic.adminurl.workflow-rpv>t3://adm003.ia.cccis.com:9319</weblogic.adminurl.workflow-rpv>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-rpvc>CSSAPPS_REPV_CLSTR_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.css>t3://adm003.ia.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.intf>t3://adm001.ia.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.msg1>t3://adm101.ia.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm101.ia.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.ia.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.ia.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.eznet>t3://adm101.ia.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.iw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+				<weblogic.adminurl.x86.wa3>t3://adm002.ia.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.idm>t3://adm101.ia.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.x86.idaam>t3://ptlidaam001.ia.cccis.com:19307</weblogic.adminurl.x86.idaam>
+				<weblogic.adminurl.intf>t3://adm001.ia.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.obfs>t3://adm001.ia.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				<weblogic.adminurl.x86.workflow>t3://dgia21b.cccis.com:9004</weblogic.adminurl.x86.workflow>
+				<weblogicUN_serverURL_x86>t3://eznet101.ia.cccis.com:9821</weblogicUN_serverURL_x86>
+				<weblogic.adminurl.reprocess>t3://reproc001.ia.cccis.com:9313</weblogic.adminurl.reprocess>
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.ia.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<weblogic.adminurl.x86.po1>t3://adm101.ia.cccis.com:9302</weblogic.adminurl.x86.po1>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm002.ia.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<!--oracle.bpeldeployurl.eznet>http://eznet101.ia.cccis.com:9821</oracle.bpeldeployurl.eznet-->
+				<oracle.bpeldeployurl.eznet>http://eznet101.ia.cccis.com:9441</oracle.bpeldeployurl.eznet>
+				<weblogic.targets.workflow-aps2/>
+				<weblogic.targets.workflow-rpvc>WL_WORKFLOW_RPRVW_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.fnol>t3://adm101.ia.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<weblogic.adminurl.x86.vsapps>t3://adm002.ia.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.vsapps2>t3://adm002.ia.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2/>
+				<weblogic.targets.webapps-smgt3/>
+				<weblogic.targets.webapps-smgt4/>
+				<weblogic.targets.webapps-smgt5/>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm003.ia.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://adm101.ia.cccis.com:9303</weblogic.adminurl.x86.eznet.temp>
+				<weblogic.targets.x86-clstemp>EZNET_MDB_CLSTR_001</weblogic.targets.x86-clstemp>
+				
+				<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.ia.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+
+				<weblogic.adminurl.x86.intfin>t3://adm001.ia.cccis.com:9314</weblogic.adminurl.x86.intfin>	
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+                                <weblogic.adminurl.x86.btchproc>t3://batchproc001.ia.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+                                <weblogic.adminurl.x86.gpsvcs>t3://gpadm001.ia.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+				<weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.ia.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+				<!-- Database URLS -->
+				<database.url.aps>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/APSI</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/RPSI</database.url.rps>
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/RPSPREPROCI</database.url.RPSPREPROC>
+                                <database.url.rpsetluser>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/RPSPREPROCI</database.url.rpsetluser>
+				<database.url.ngsch>jdbc:oracle:thin:@dgildb01-scan.cccis.com/NGSCHI</database.url.ngsch>
+				<database.url.spuser>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/MPALI</database.url.spuser>
+				<database.url.spappuser>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/MPALI</database.url.spappuser>
+			<!-- LIQUIBASE DB URLS -->
+		<database.url.AUDRUL>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/AUDRULI</database.url.AUDRUL>
+		<database.url.BATCHFD>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/BATCHFDI</database.url.BATCHFD>
+		<database.url.BIDW>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/BIDW</database.url.BIDW>
+		<database.url.BTCHREPETL>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/BTCHREPETL</database.url.BTCHREPETL>
+		<database.url.CCCONEIDM>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/CCCONEIDM</database.url.CCCONEIDM>
+		<database.url.CFB>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/CFBI</database.url.CFB>
+		<database.url.CFGWFL>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/CFGWFLI</database.url.CFGWFL>
+		<database.url.EDIREG>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/EDIREGI</database.url.EDIREG>
+		<database.url.EZNETI>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/EZNETII</database.url.EZNETI>
+		<database.url.INJS>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/INJSI</database.url.INJS>
+		<database.url.INTFFRMWK>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/INTFFRMWK</database.url.INTFFRMWK>
+		<database.url.INTFINBND>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/INTFINBNDI</database.url.INTFINBND>
+		<database.url.LGCYINTF>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/LGCYINTF</database.url.LGCYINTF>
+		<database.url.MAINTARCH>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/MAINTARCH</database.url.MAINTARCH>
+		<database.url.MESG>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/MESG</database.url.MESG>
+		<database.url.MQHUB>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/MQHUB</database.url.MQHUB>
+		<!--<database.url.NGSCH>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/NGSCHI</database.url.NGSCH>-->
+		<database.url.PANALYTICS>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/PANALYTICS</database.url.PANALYTICS>
+		<database.url.PTLWEB>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/PTLWEB</database.url.PTLWEB>
+		<database.url.SESBCF>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/SESBCF</database.url.SESBCF>
+		<database.url.VALRP>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/VALRPI</database.url.VALRP>
+		<database.url.VLATION>jdbc:oracle:thin:@dgildb01-scan.cccis.com:1521/VLATION</database.url.VLATION>
+		<!--<database.url.APS>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/APSI</database.url.APS>-->
+		<database.url.CSS>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/CSSI</database.url.CSS>
+		<database.url.HPS>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/HPSIA</database.url.HPS>
+		<database.url.ILOG>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/ILOGIA</database.url.ILOG>
+		<database.url.PARTSDWAPS>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/PARTSDWAPSI</database.url.PARTSDWAPS>
+		<!--<database.url.RPS>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/RPSI</database.url.RPS>-->
+		<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/RPSPREPROCI</database.url.RPSPREPROC>-->
+		<database.url.VI>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/VIIA</database.url.VI>
+		<database.url.VLO>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/VLOI</database.url.VLO>
+		<database.url.BTCHREPETL>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/BTCHREPETLI</database.url.BTCHREPETL>
+		<database.url.CCCONEVAL>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/CCCONEVALI</database.url.CCCONEVAL>
+		<database.url.PARTSDWCF>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/PARTSDWCFI</database.url.PARTSDWCF>
+		<database.url.PARTSDWRPS>jdbc:oracle:thin:@maildb-scan.cccis.com:1521/PARTSDWRPSI</database.url.PARTSDWRPS>
+		<database.url.RPS>jdbc:oracle:thin:@maildb-scan.cccis.com:1521/RPSI</database.url.RPS>
+		<database.url.RPSPREPROC>jdbc:oracle:thin:@maildb-scan.cccis.com:1521/RPSPREPROCI</database.url.RPSPREPROC>
+		<!-- END LIQUIBASE DB URLS -->
+
+			</properties>	
+		</profile>
+
+		<!--profile>
+			<id>deployment.int0</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int0</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.msg1>t3://adm001.ia.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm001.ia.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm001.ia.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm001.ia.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.intf>t3://adm001.ia.cccis.com:9306</weblogic.adminurl.intf>
+                                <weblogic.adminurl.x86.po1>t3://adm001.ia.cccis.com:9302</weblogic.adminurl.x86.po1>
+			</properties>	
+		</profile  taken off line by djk on 9/23-->
+		<profile>
+			<id>deployment.int1</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int1</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.fnol>t3://dgda21cb.cccis.com:9001</weblogic.adminurl.fnol>
+				<!-- Solaris domain  -->
+				<weblogic.targets.fnol1>srvr-intfmwk-001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2/>
+				<weblogic.targets.fnol3/>
+				<weblogic.adminurl.workflow-aps>t3://dgia21b.cccis.com:9004</weblogic.adminurl.workflow-aps>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-aps1>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2/>
+				<weblogic.targets.workflow-aps3/>
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<weblogic.targets.workflow-apsmsg>WORKFLOW_APSMSG_CLSTR_001</weblogic.targets.workflow-apsmsg>
+				<weblogic.adminurl.workflow-egn>t3://dgda21cc.cccis.com:9004</weblogic.adminurl.workflow-egn>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<weblogic.adminurl.intf>t3://adm001.ia.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.msg1>t3://adm101.ia.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm101.ia.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.ia.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.ia.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.wa3>t3://adm002.ia.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.dataSync>t3://adm003.ia.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.adminurl.x86.eznet>t3://adm101.ia.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.idm>t3://adm101.ia.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.x86.workflow>t3://adm003.ia.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.ia.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.adminurl.x86.vsapps>t3://adm002.ia.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.obfs>t3://adm001.ia.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm003.ia.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+                <weblogic.adminurl.x86.btchproc>t3://batchproc001.ia.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+				<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.ia.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+				<database.url.spuser>jdbc:oracle:thin:@maildb01-scan.cccis.com:1521/MPALI</database.url.spuser>
+						<!-- LIQUIBASE DB URLS -->
+		<database.url.B2B>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/B2BIA</database.url.B2B>
+		<database.url.B2BVALRP>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/B2BVALRPI</database.url.B2BVALRP>
+		<database.url.CRP>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/CRPI</database.url.CRP>
+		<database.url.HPS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/HPSIB</database.url.HPS>
+		<database.url.ILOG>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/ILOGIB</database.url.ILOG>
+		<database.url.MSP>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/MSPI</database.url.MSP>
+		<database.url.RPSSERV>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSSERVI</database.url.RPSSERV>
+		<!-- END LIQUIBASE DB URLS -->
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.int11</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int11</value>
+				</property>
+			</activation>
+			<properties>
+<test>new_test@int11</test>
+<sunny>kaisa-hai-re</sunny>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.int12</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>int12</value>
+				</property>
+			</activation>
+			<properties>
+
+				<weblogic.adminurl.x86.vsapps>t3://adm001.xa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+			</properties>	
+		</profile>
+
+
+		<profile>
+			<id>deployment.qa</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>qa</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- removed by llebahn  07102015 - machine no longer used <weblogic.adminurl.fnol>t3://dgqa21g.cccis.com:9006</weblogic.adminurl.fnol>-->
+				<!-- Solaris domain  -->
+				<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3/>
+				<!-- removed by llebahn  07102015 - machine no longer used <weblogic.adminurl.intf>t3://dgqa21g.cccis.com:9001</weblogic.adminurl.intf>-->
+
+				<!-- removed by llebahn 07102015 - machine no longer used <weblogic.adminurl.workflow-aps>t3://dgqa21g.cccis.com:9002</weblogic.adminurl.workflow-aps> -->
+				<!-- Solaris domain  -->				                       
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2>WL_WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+				<weblogic.targets.workflow-aps3/>
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<!-- removed by llebahn 07102015 - machine no longer used <weblogic.adminurl.workflow-egn>t3://dgqa21g.cccis.com:9002</weblogic.adminurl.workflow-egn>-->
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<!-- removed by llebahn 07102015 - machine no longer used <weblogic.adminurl.workflow-rpv>t3://dgqa21e.cccis.com:9007</weblogic.adminurl.workflow-rpv>-->
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-rpvc>WEBAPPS_REPV_CLSTER_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.css>t3://adm003.qa.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.msg1>t3://adm101.qa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm101.qa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.qa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.qa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.wa3>t3://adm101.qa.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.btchproc>t3://batchproc001.qa.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.qa.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<!-- removed by llebahn 07102015 - machine no longer used <weblogic.adminurl.x86.wa4>t3://adm202.qa.cccis.com:9307</weblogic.adminurl.x86.wa4> -->
+				<weblogic.adminurl.x86.eznet>t3://adm101.qa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.qw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+				<weblogic.adminurl.intf>t3://adm001.qa.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.obfs>t3://adm001.qa.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				<weblogic.adminurl.x86.idm>t3://adm101.qa.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.x86.idaam>t3://ptlidaam001.qa.cccis.com:19307</weblogic.adminurl.x86.idaam>
+				<weblogic.adminurl.x86.workflow>t3://adm003.qa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<!-- weblogic.adminurl.x86.workflow>t3://dgqa21g.cccis.com:9002</weblogic.adminurl.x86.workflow -->
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.qa.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<!-- removed by llebahn 07102015 - machine no longer used <weblogic.adminurl.x86.po1>t3://adm101.qa.cccis.com:9302</weblogic.adminurl.x86.po1>-->
+				<oracle.bpeldeployurl.eznet>http://eznet101.qa.cccis.com:9441</oracle.bpeldeployurl.eznet>
+				<weblogic.adminurl.x86.fnol>t3://adm101.qa.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<weblogic.adminurl.x86.vsapps>t3://adm001.qa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.vsapps2>t3://adm001.qa.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://adm101.qa.cccis.com:9303</weblogic.adminurl.x86.eznet.temp>
+				<weblogic.targets.x86-clstemp>EZNET_MDB_CLSTR_001</weblogic.targets.x86-clstemp>
+<weblogic.targets.x86-vsappsmgmt>VSAPPS_MGMT_CLSTR_001</weblogic.targets.x86-vsappsmgmt>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm101.qa.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<weblogic.adminurl.x86.intfin>t3://adm001.qa.cccis.com:9314</weblogic.adminurl.x86.intfin>
+                                <weblogic.targets.x86-intfinwebc>INTFIN_WEB_CLSTR_001</weblogic.targets.x86-intfinwebc>
+				<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.qa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+				<weblogic.targets.webapps-smgt3/>
+				<weblogic.targets.webapps-smgt4/>
+				<weblogic.targets.webapps-smgt5/>
+				<weblogic.adminurl.x86.dataSync>t3://adm101.qa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.adminurl.x86.gpsvcs>t3://gpadm001.qa.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+                                 <weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.qa.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+				<database.url.aps>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/APSQ</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSQ</database.url.rps>
+				<database.url.rpsetluser>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSPREPROCQ</database.url.rpsetluser>
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSPREPROCQ</database.url.RPSPREPROC>
+				<database.url.spuser>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/MPALQ</database.url.spuser>
+				<database.url.spappuser>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/MPALQ</database.url.spappuser>
+				<database.url.ngsch>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/NGSCHQ</database.url.ngsch>
+
+			<!-- LIQUIBASE DB URLS -->
+			<database.url.PARTSDWRPS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/PARTSDWRPSQ</database.url.PARTSDWRPS>
+			<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSPREPROCQ</database.url.RPSPREPROC>
+			<database.url.RPSPREPROC>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSPREPROCQB</database.url.RPSPREPROC>-->
+			<!--<database.url.RPS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSQ</database.url.RPS>-->
+			<database.url.BIDW>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/BIDWQB</database.url.BIDW>
+			<database.url.BTCHREPETL>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/BTCHREPETLQB</database.url.BTCHREPETL>
+			<database.url.CCCONEIDM>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/CCCONEIDMQB</database.url.CCCONEIDM>
+			<database.url.CCCONEVAL>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/CCCONEVALQ</database.url.CCCONEVAL>
+			<database.url.EZNETII>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/EZNETIIQB</database.url.EZNETII>
+			<database.url.FNOLSVC>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/FNOLSVCQ</database.url.FNOLSVC>
+			<database.url.INTFFRMWK>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/INTFFRMWKQB</database.url.INTFFRMWK>
+			<database.url.LGCYINTF>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/LGCYINTFQB</database.url.LGCYINTF>
+			<database.url.MAINTARCH>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/MAINTARCHQB</database.url.MAINTARCH>
+			<database.url.MESG>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/MESGQB</database.url.MESG>
+			<database.url.MQHUB>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/MQHUBQB</database.url.MQHUB>
+			<database.url.PANALYTICS>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/PANALYTICSQB</database.url.PANALYTICS>
+			<database.url.PARTSDWCF>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/PARTSDWCFQ</database.url.PARTSDWCF>
+			<database.url.PTLWEB>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/PTLWEBQB</database.url.PTLWEB>
+			<database.url.SESBCF>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/SESBCFQB</database.url.SESBCF>
+			<database.url.VLATION>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/VLATIONQB</database.url.VLATION>
+			<database.url.VLTN>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/VLTN</database.url.VLTN>
+			<database.url.CAL>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/CALQ</database.url.CAL>
+			<database.url.CFARCH>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/CFARCHQ</database.url.CFARCH>
+			<database.url.CFHIST>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/CFHISTQ</database.url.CFHIST>
+			<database.url.HPS>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/HPSQA</database.url.HPS>
+			<database.url.ILOG>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/ILOGQA</database.url.ILOG>
+			<database.url.LFEES>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/LFEESQ</database.url.LFEES>
+			<database.url.PARTSDWMPAL>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/PARTSDWMPALQ</database.url.PARTSDWMPAL>
+			<database.url.PROC>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/PROCQ</database.url.PROC>
+			<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/RPSPREPROCQA</database.url.RPSPREPROC>-->
+			<database.url.RPS>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/RPSQ</database.url.RPS>
+			<database.url.VI>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/VIQA</database.url.VI>
+			<database.url.VLO>jdbc:oracle:thin:@maqldb01-scan.cccis.com:1521/VLOQ</database.url.VLO>
+			<!-- END LIQUIBASE DB URLS -->
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.qa0</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>qa0</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.msg1>t3://adm001.qa.cccis.com:9316</weblogic.adminurl.x86.msg1> -->
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.msg2>t3://adm001.qa.cccis.com:9318</weblogic.adminurl.x86.msg2> -->
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.wa1>t3://adm001.qa.cccis.com:9307</weblogic.adminurl.x86.wa1> -->
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.wa2>t3://adm001.qa.cccis.com:9315</weblogic.adminurl.x86.wa2> -->
+				<weblogic.adminurl.x86.wa3>t3://adm001.qa.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.vsapps>t3://adm001.qa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+
+				<!-- LIQUIBASE DB URLS -->
+				<database.url.AP>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/APQ6</database.url.AP>
+			<database.url.APSARCH>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/APSARCHQ</database.url.APSARCH>
+			<!--<database.url.APS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/APSQ</database.url.APS>-->
+			<database.url.B2B>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/B2BQ</database.url.B2B>
+			<database.url.CRP>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/CRPQ</database.url.CRP>
+			<database.url.CR>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/CRQ1</database.url.CR>
+			<database.url.CSSMAINT>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/CSSMAINTQ</database.url.CSSMAINT>
+			<database.url.CSS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/CSSQ</database.url.CSS>
+			<database.url.ESP>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/ESPQ</database.url.ESP>
+			<database.url.FNOL>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/FNOLQ</database.url.FNOL>
+			<database.url.HPS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/HPSQB</database.url.HPS>
+			<database.url.ILOG>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/ILOGQB</database.url.ILOG>
+			<database.url.MSP>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/MSPQ</database.url.MSP>
+			<database.url.OGGMPCL>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/OGGMPCLQ</database.url.OGGMPCL>
+			<database.url.PARTSDWAPS>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/PARTSDWAPSQ</database.url.PARTSDWAPS>
+			<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@dgqldb01-scan.cccis.com:1521/RPSPREPROCQB</database.url.RPSPREPROC>-->
+               <!-- END LIQUIBASE DB URLS-->             
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.qa1</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>qa1</value>
+				</property>
+			</activation>
+			<properties>
+<weblogic.adminurl.x86.msg2>t3://adm101.qa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+<weblogic.adminurl.x86.eznet>t3://adm101.qa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+<weblogic.adminurl.intf>t3://adm001.qa.cccis.com:9306</weblogic.adminurl.intf>
+<weblogic.targets.workflow-rpvc>CSSAPPS_REPV_CLSTR_001</weblogic.targets.workflow-rpvc>
+<weblogic.adminurl.workflow-rpv>t3://adm003.qa.cccis.com:9319</weblogic.adminurl.workflow-rpv>
+<weblogic.adminurl.x86.wa2>t3://adm001.qa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+<weblogic.targets.workflow-aps2>WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+<weblogic.adminurl.x86.msg1>t3://adm101.qa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+<weblogic.adminurl.x86.idm>t3://adm101.qa.cccis.com:9304</weblogic.adminurl.x86.idm>
+<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+<weblogic.adminurl.x86.reprocess>t3://reproc001.qa.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+<weblogic.targets.workflow-aps1>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflow-aps1>
+<weblogic.adminurl.x86.css>t3://adm003.qa.cccis.com:9319</weblogic.adminurl.x86.css>
+<weblogic.adminurl.x86.wa1>t3://adm001.qa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.qa2</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>qa2</value>
+				</property>
+			</activation>
+			<properties>
+                                <weblogic.adminurl.x86.slvgsvcs>t3://plslvgsvcsadm001.qa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+
+				<!-- removed by llebahn  07102015 - machine no longer used <weblogic.adminurl.x86.vsapps>t3://pladm002.qa.cccis.com:9312</weblogic.adminurl.x86.vsapps>-->
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.qa5</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>qa5</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.workflow>t3://rsadm001.qa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.adminurl.x86.ams>t3://rsadm001.qw.cccis.com:11107</weblogic.adminurl.x86.ams>
+				<weblogic.adminurl.x86.dataSync>t3://rsadm001.qa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-prcmtc>PARTS_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.x86-dataSync>PARTS_SSP_CLSTR_001</weblogic.targets.x86-dataSync>
+				<!-- Database URLS -->
+				<database.url.procurement>jdbc:oracle:thin:@rsdldb01a.cccis.com:1521/PROCQ</database.url.procurement>
+			</properties>	
+		</profile>
+
+
+			<profile>
+			<id>deployment.px</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>px</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- exalogic replacement servers -->
+				<weblogic.adminurl.x86.wa1>t3://prwebappsadm001.xa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://prwebappsadm101.xa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.msg1>t3://prmsgappsadm001.xa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://prmsgappsadm101.xa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.eznet>t3://preznetadm001.xa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.idm>t3://pridmadm001.xa.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.intf>t3://printfadm001.xa.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.intfin>t3://printfinadm001.xa.cccis.com:9314</weblogic.adminurl.x86.intfin>
+				<!-- added CR#4031503-->
+				<weblogic.targets.x86-intfinwebc>INTFIN_WEB_CLSTR_001</weblogic.targets.x86-intfinwebc>
+				<weblogic.adminurl.x86.obfs>t3://printfobfsadm001.xa.cccis.com:9308</weblogic.adminurl.x86.obfs>
+
+				<!--
+				removed as part of exalogic replacement:
+				<weblogic.adminurl.x86.msg1>t3://adm101.xa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm101.xa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.xa.cccis.com:9307</weblogic.adminurl.x86.wa1> 
+				<weblogic.adminurl.x86.wa2>t3://adm101.xa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.eznet>t3://adm102.xa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.idm>t3://adm102.xa.cccis.com:9304</weblogic.adminurl.x86.idm>
+				 <weblogic.adminurl.intf>t3://adm101.xa.cccis.com:9306</weblogic.adminurl.intf> 
+				 <weblogic.adminurl.intf>t3://adm101.xa.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.intfin>t3://adm102.xa.cccis.com:9314</weblogic.adminurl.x86.intfin>				
+				<weblogic.adminurl.x86.obfs>t3://adm102.xa.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				-->
+				<weblogic.adminurl.x86.idaam>t3://ptlidaam001.xa.cccis.com:19307</weblogic.adminurl.x86.idaam>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.fnol>t3://maxa20b.cccis.com:9006</weblogic.adminurl.fnol> -->  <!-- Solaris domain  -->
+				<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3/>
+				<!---->
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.workflow-aps>t3://maxa20b.cccis.com:9002</weblogic.adminurl.workflow-aps> -->   <!-- Solaris domain  -->
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2>WL_WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+				<weblogic.targets.workflow-aps3/>
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.workflow-egn>t3://maxa20b.cccis.com:9002</weblogic.adminurl.workflow-egn> -->   <!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.workflow-rpv>t3://maxa20b.cccis.com:9007</weblogic.adminurl.workflow-rpv> -->  <!-- Solaris domain  -->
+				<weblogic.targets.workflow-rpvc>WEBAPPS_REPV_CLSTER_001</weblogic.targets.workflow-rpvc>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+                            <weblogic.adminurl.x86.css>t3://adm003.xa.cccis.com:9319</weblogic.adminurl.x86.css> -->
+
+				<weblogic.adminurl.x86.wa3>t3://adm001.xa.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				
+				<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.xw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+
+				<weblogic.adminurl.x86.workflow>t3://adm001.xa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.xa.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.xa.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<oracle.bpeldeployurl.eznet/>
+				<weblogic.adminurl.x86.fnol>t3://adm001.xa.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.po1>t3://adm001.xa.cccis.com:9302</weblogic.adminurl.x86.po1> -->
+				<weblogic.adminurl.x86.vsapps>t3://adm001.xa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.vsapps2>t3://adm001.xa.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm001.xa.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://adm101.xa.cccis.com:9306</weblogic.adminurl.x86.eznet.temp>
+				<weblogic.targets.x86-clstemp>INTF_AAWS_CLSTR_001</weblogic.targets.x86-clstemp>
+
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+				<weblogic.targets.webapps-smgt3>WEBAPPS_SMGT_003</weblogic.targets.webapps-smgt3>
+				<weblogic.targets.webapps-smgt4>WEBAPPS_SMGT_004</weblogic.targets.webapps-smgt4>
+				<weblogic.targets.webapps-smgt5>WEBAPPS_SMGT_005</weblogic.targets.webapps-smgt5>
+				<weblogic.adminurl.x86.dataSync>t3://adm001.xa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+                <weblogic.adminurl.x86.btchproc>t3://batchproc001.xa.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+                <weblogic.adminurl.x86.gpsvcs>t3://gpadm001.xa.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+                <weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.xa.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+				<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.xa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+				<database.url.aps>jdbc:oracle:thin:@maex-scan.cccis.com:1521/APSX</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSX</database.url.rps>
+				<database.url.rpsetluser>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSPREPROCX</database.url.rpsetluser>
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSX</database.url.RPSPREPROC>
+				<database.url.spappuser>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/MPBLX</database.url.spappuser>
+<database.url.spuser>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/MPBLX</database.url.spuser>
+				<database.url.ngsch>jdbc:oracle:thin:@maex-scan.cccis.com:1521/NGSCHX</database.url.ngsch>
+
+			<!-- LIQUIBASE DB URLS -->
+			<database.url.AUDRUL>jdbc:oracle:thin:@maex-scan.cccis.com:1521/AUDRULX</database.url.AUDRUL>
+			<database.url.BATCHFD>jdbc:oracle:thin:@maex-scan.cccis.com:1521/BATCHFDX</database.url.BATCHFD>
+			<database.url.BIDW>jdbc:oracle:thin:@maex-scan.cccis.com:1521/BIDWX</database.url.BIDW>
+			<database.url.BTCHREPETL>jdbc:oracle:thin:@maex-scan.cccis.com:1521/BTCHREPETLX</database.url.BTCHREPETL>
+			<database.url.CCCONEIDM>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CCCONEIDMX</database.url.CCCONEIDM>
+			<database.url.CCCONEVAL>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CCCONEVALX</database.url.CCCONEVAL>
+			<database.url.CFAEX_RMAN>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CFAEX_RMAN</database.url.CFAEX_RMAN>
+			<database.url.CFARCH>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CFARCHX</database.url.CFARCH>
+			<database.url.CFA>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CFAX</database.url.CFA>
+			<database.url.CFGWFL>jdbc:oracle:thin:@maex-scan.cccis.com:1521/CFGWFLX</database.url.CFGWFL>
+			<database.url.EDIREG>jdbc:oracle:thin:@maex-scan.cccis.com:1521/EDIREGX</database.url.EDIREG>
+			<database.url.EZNETII>jdbc:oracle:thin:@maex-scan.cccis.com:1521/EZNETIIX</database.url.EZNETII>
+			<database.url.FNOLSVC>jdbc:oracle:thin:@maex-scan.cccis.com:1521/FNOLSVCX</database.url.FNOLSVC>
+			<database.url.INJS>jdbc:oracle:thin:@maex-scan.cccis.com:1521/INJSX</database.url.INJS>
+			<database.url.INTFFRMWK>jdbc:oracle:thin:@maex-scan.cccis.com:1521/INTFFRMWKX</database.url.INTFFRMWK>
+			<database.url.INTFINBND>jdbc:oracle:thin:@maex-scan.cccis.com:1521/INTFINBNDX</database.url.INTFINBND>
+			<database.url.LGCYINTF>jdbc:oracle:thin:@maex-scan.cccis.com:1521/LGCYINTFX</database.url.LGCYINTF>
+			<database.url.MAINTARCH>jdbc:oracle:thin:@maex-scan.cccis.com:1521/MAINTARCHX</database.url.MAINTARCH>
+			<database.url.MESG>jdbc:oracle:thin:@maex-scan.cccis.com:1521/MESGX</database.url.MESG>
+			<database.url.MQHUB>jdbc:oracle:thin:@maex-scan.cccis.com:1521/MQHUBX</database.url.MQHUB>
+			<!--<database.url.NGSCH>jdbc:oracle:thin:@maex-scan.cccis.com:1521/NGSCHX</database.url.NGSCH>-->
+			<database.url.PANALYTICS>jdbc:oracle:thin:@maex-scan.cccis.com:1521/PANALYTICSX</database.url.PANALYTICS>
+			<database.url.PARTSDWCF>jdbc:oracle:thin:@maex-scan.cccis.com:1521/PARTSDWCFX</database.url.PARTSDWCF>
+			<database.url.PTLWEB>jdbc:oracle:thin:@maex-scan.cccis.com:1521/PTLWEBX</database.url.PTLWEB>
+			<database.url.SESBCF>jdbc:oracle:thin:@maex-scan.cccis.com:1521/SESBCFX</database.url.SESBCF>
+			<database.url.VALRP>jdbc:oracle:thin:@maex-scan.cccis.com:1521/VALRPX</database.url.VALRP>
+			<database.url.VLATION>jdbc:oracle:thin:@maex-scan.cccis.com:1521/VLATIONX</database.url.VLATION>
+			<database.url.CFARCH>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/CFARCHX</database.url.CFARCH>
+			<database.url.CFHIST>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/CFHISTX</database.url.CFHIST>
+			<database.url.PWSTGSVC>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/PWSTGSVCX</database.url.PWSTGSVC>
+			<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSPREPROCX</database.url.RPSPREPROC>-->
+			<!--<database.url.RPS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/RPSX</database.url.RPS>-->
+			<!--<database.url.APS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/APSX</database.url.APS>-->
+			<database.url.B2B>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/B2BX</database.url.B2B>
+			<database.url.CRP>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/CRPX</database.url.CRP>
+			<database.url.CSS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/CSSX</database.url.CSS>
+			<database.url.FNOL>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/FNOLX</database.url.FNOL>
+			<database.url.HPS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/HPSX</database.url.HPS>
+			<database.url.ILOG>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/ILOGX</database.url.ILOG>
+			<database.url.MSP>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/MSPX</database.url.MSP>
+			<database.url.PARTSDWMPBL>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/PARTSDWMPBLX</database.url.PARTSDWMPBL>
+			<database.url.PPS>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/PPSX</database.url.PPS>
+			<database.url.PROC>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/PROCX</database.url.PROC>
+			<database.url.VI>jdbc:oracle:thin:@maxldb01-scan.cccis.com:1521/VIX</database.url.VI>
+			<!-- END LIQUIBASE DB URLS -->
+
+			</properties>	
+		</profile>
+                <profile>
+                        <id>deployment.px2</id>
+                        <activation>
+                                <property>
+                                        <name>deployment.environment</name>
+                                        <value>px2</value>
+                                </property>
+                        </activation>
+                        <properties>
+                                <weblogic.adminurl.x86.slvgsvcs>t3://plslvgsvcsadm001.xa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+
+			</properties>
+		</profile>
+
+
+		<profile>
+			<id>deployment.px5</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>px5</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.workflow>t3://rsadm001.xa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.adminurl.x86.ams>t3://rsadm001.xw.cccis.com:11107</weblogic.adminurl.x86.ams>
+				<weblogic.targets.x86-prcmtc>PARTS_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.adminurl.x86.dataSync>t3://rsadm001.xa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>PARTS_SSP_CLSTR_001</weblogic.targets.x86-dataSync>
+				<!-- Database URLS -->
+				<database.url.procurement>jdbc:oracle:thin:@rsdldb01a.cccis.com:1521/PROCX</database.url.procurement>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.ct</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>ct</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.fnol>t3://dgca21c.cccis.com:9006</weblogic.adminurl.fnol>
+				<!-- Solaris domain  -->
+				<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3/>
+				<weblogic.adminurl.intf>t3://adm001.ca.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.workflow-aps>t3://dgca21c.cccis.com:9002</weblogic.adminurl.workflow-aps>
+				<weblogic.targets.x86-intfinwebc>INTFIN_WEB_CLSTR_001</weblogic.targets.x86-intfinwebc>			
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2>WL_WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+				<weblogic.targets.workflow-aps3/>
+				<weblogic.targets.workflow-aps4/>
+				<weblogic.targets.workflow-aps5/>
+				<weblogic.targets.workflow-aps6/>
+				<weblogic.adminurl.workflow-egn>t3://dgca21c.cccis.com:9002</weblogic.adminurl.workflow-egn>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<weblogic.adminurl.workflow-rpv>t3://dgca21c.cccis.com:9007</weblogic.adminurl.workflow-rpv>
+				<!-- Solaris domain  -->
+				<weblogic.targets.workflow-rpvc>WEBAPPS_REPV_CLSTER_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.msg1>t3://adm101.ca.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.css>t3://adm003.ca.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.msg2>t3://adm101.ca.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.ca.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.ca.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.wa3>t3://adm101.ca.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.cw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+				<weblogic.adminurl.x86.eznet>t3://adm101.ca.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.intf>t3://adm001.ca.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.intfin>t3://adm001.ca.cccis.com:9314</weblogic.adminurl.x86.intfin>
+				<weblogic.adminurl.x86-intfinwebc>t3://adm001.ca.cccis.com:9314</weblogic.adminurl.x86-intfinwebc>
+				<weblogic.adminurl.x86.obfs>t3://adm001.ca.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				<weblogic.adminurl.x86.idm>t3://adm101.ca.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.x86.idaam>t3://ptlidaam001.ca.cccis.com:19307</weblogic.adminurl.x86.idaam>
+				<weblogic.adminurl.x86.workflow>t3://adm003.ca.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.ca.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<weblogic.adminurl.x86.css>t3://adm003.ca.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.ca.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<oracle.bpeldeployurl.eznet/>
+				<weblogic.adminurl.x86.fnol>t3://adm101.ca.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<weblogic.adminurl.x86.vsapps>t3://adm001.ca.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.vsapps2>t3://adm001.ca.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.po1>t3://adm101.ca.cccis.com:9302</weblogic.adminurl.x86.po1> -->
+				<weblogic.adminurl.x86.workflow-aps>t3://adm101.ca.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://adm101.ca.cccis.com:9303</weblogic.adminurl.x86.eznet.temp>
+				<weblogic.targets.x86-clstemp>EZNET_MDB_CLSTR_001</weblogic.targets.x86-clstemp>
+
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+				<weblogic.targets.webapps-smgt3/>
+				<weblogic.targets.webapps-smgt4/>
+				<weblogic.targets.webapps-smgt5/>
+				<weblogic.adminurl.x86.dataSync>t3://adm101.ca.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+                                <weblogic.adminurl.x86.btchproc>t3://batchproc001.ca.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+                                <weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.ca.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+                                <weblogic.adminurl.x86.gpsvcs>t3://gpadm001.ca.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+				<weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.ca.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+				<database.url.aps>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/APSC</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/RPSC</database.url.rps>
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@edsdb02b-vip.cccis.com:1521/RPSPREPROCC</database.url.RPSPREPROC>
+				<database.url.rpsetluser>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/RPSPREPROCC</database.url.rpsetluser>
+				<database.url.ngsch>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/NGSCHC</database.url.ngsch>
+
+		<!-- LIQUIBASE DB URLS -->
+		<database.url.AUDRUL>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/AUDRULC</database.url.AUDRUL>
+		<database.url.BATCHFD>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/BATCHFDC</database.url.BATCHFD>
+		<database.url.BIDW>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/BIDWC</database.url.BIDW>
+		<database.url.BTCHREPETL>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/BTCHREPETLC</database.url.BTCHREPETL>
+		<database.url.CCCONEIDM>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/CCCONEIDMC</database.url.CCCONEIDM>
+		<database.url.CCCONEVAL>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/CCCONEVALC</database.url.CCCONEVAL>
+		<database.url.CCCONEVAL>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/CCCONEVALCT</database.url.CCCONEVAL>
+		<database.url.EDIREG>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/EDIREGC</database.url.EDIREG>
+		<database.url.EZNETII>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/EZNETIIC</database.url.EZNETII>
+		<database.url.FNOLSVC>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/FNOLSVCC</database.url.FNOLSVC>
+		<database.url.INJS>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/INJSC</database.url.INJS>
+		<database.url.INTFFRMWK>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/INTFFRMWKC</database.url.INTFFRMWK>
+		<database.url.INTFINBND>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/INTFINBNDCT</database.url.INTFINBND>
+		<database.url.LGCYINTF>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/LGCYINTFC</database.url.LGCYINTF>
+		<database.url.MAINTARCH>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/MAINTARCHC</database.url.MAINTARCH>
+		<database.url.MESG>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/MESGC</database.url.MESG>
+		<database.url.MQHUB>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/MQHUBC</database.url.MQHUB>
+		<!--<database.url.NGSCH>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/NGSCHC</database.url.NGSCH>-->
+		<database.url.OGGCFAL>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/OGGCFALC</database.url.OGGCFAL>
+		<database.url.PANALYTICS>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/PANALYTICSC</database.url.PANALYTICS>
+		<database.url.PTLWEB>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/PTLWEBC</database.url.PTLWEB>
+		<database.url.SESBCF>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/SESBCFC</database.url.SESBCF>
+		<database.url.VALRP>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/VALRPC</database.url.VALRP>
+		<database.url.VLATION>jdbc:oracle:thin:@edsdb02-scan.cccis.com:1521/VLATIONC</database.url.VLATION>
+		<database.url.BIDW>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/BIDWCT</database.url.BIDW>
+		<database.url.BTCHREPETL>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/BTCHREPETLCT</database.url.BTCHREPETL>
+		<database.url.CCCONEIDM>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/CCCONEIDMCT</database.url.CCCONEIDM>
+		<database.url.CCCONEVAL>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/CCCONEVALC</database.url.CCCONEVAL>
+		<database.url.EZNETII>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/EZNETIICT</database.url.EZNETII>
+		<database.url.INTFFRMWK>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/INTFFRMWKCT</database.url.INTFFRMWK>
+		<database.url.LGCYINTF>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/LGCYINTFCT</database.url.LGCYINTF>
+		<database.url.MAINTARCH>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/MAINTARCHCT</database.url.MAINTARCH>
+		<database.url.MESG>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/MESGCT</database.url.MESG>
+		<database.url.MQHUB>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/MQHUBCT</database.url.MQHUB>
+		<database.url.PANALYTICS>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/PANALYTICSCT</database.url.PANALYTICS>
+		<database.url.PTLWEB>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/PTLWEBCT</database.url.PTLWEB>
+		<database.url.SESBCF>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/SESBCFCT</database.url.SESBCF>
+		<database.url.VLATION>jdbc:oracle:thin:@edsdb03-scan.cd.cccis.com:1521/VLATIONCT</database.url.VLATION>
+		<!-- END LIQUIBASE DB URLS -->
+
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.ct0</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>ct0</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.wa3>t3://adm001.ca.cccis.com:9317</weblogic.adminurl.x86.wa3> -->
+			</properties>
+		</profile>
+<profile>
+			<id>deployment.prod</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>prod</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- exalogic replacement servers - 04/26/2016 -->
+<weblogic.adminurl.x86.idm>t3://pridmadm001.pa.cccis.com:9304</weblogic.adminurl.x86.idm>
+<weblogic.adminurl.x86.eznet>t3://preznetadm001.pa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+<weblogic.adminurl.x86.wa1>t3://prwebappsadm001.pa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+<weblogic.adminurl.x86.wa2>t3://prwebappsadm101.pa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+<weblogic.adminurl.x86.msg1>t3://prmsgappsadm001.pa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+<weblogic.adminurl.x86.msg2>t3://prmsgappsadm101.pa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+<weblogic.adminurl.intf>t3://printfadm001.pa.cccis.com:9306</weblogic.adminurl.intf>
+<weblogic.adminurl.x86.intfin>t3://printfinadm001.pa.cccis.com:9314</weblogic.adminurl.x86.intfin>
+<!-- added CR#4031503-->
+<weblogic.targets.x86-intfinwebc>INTFIN_WEB_CLSTR_001</weblogic.targets.x86-intfinwebc>
+<weblogic.adminurl.x86.obfs>t3://printfobfsadm001.pa.cccis.com:9308</weblogic.adminurl.x86.obfs> 
+
+				<!-- old exalogic servers - 04/26/2016 
+				<weblogic.adminurl.x86.intfin>t3://adm102.pa.cccis.com:9314</weblogic.adminurl.x86.intfin>
+				<weblogic.adminurl.x86.msg1>t3://adm101.pa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://adm101.pa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://adm101.pa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://adm101.pa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.intf>t3://adm101.pa.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.obfs>t3://adm102.pa.cccis.com:9308</weblogic.adminurl.x86.obfs> 
+				
+				<weblogic.adminurl.x86.eznet>t3://adm102.pa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.idm>t3://adm102.pa.cccis.com:9304</weblogic.adminurl.x86.idm> -->
+				
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.fnol>t3://dgpa21a.cccis.com:9006</weblogic.adminurl.fnol> --> <!-- Solaris domain  -->
+				<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3>WL_FNOL_FNOLPA_003</weblogic.targets.fnol3>
+
+				
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:				
+				<weblogic.adminurl.workflow-aps>t3://dgpa21z.cccis.com:9002</weblogic.adminurl.workflow-aps> -->   <!-- Solaris domain  -->
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2>WL_WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+				<weblogic.targets.workflow-aps3>WL_WORKFLOW_APS_003</weblogic.targets.workflow-aps3>
+				<weblogic.targets.workflow-aps4>WL_WORKFLOW_APS_004</weblogic.targets.workflow-aps4>
+				<weblogic.targets.workflow-aps5>WL_WORKFLOW_APS_005</weblogic.targets.workflow-aps5>
+				<weblogic.targets.workflow-aps6>WL_WORKFLOW_APS_006</weblogic.targets.workflow-aps6>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.workflow-egn>t3://dgpa21z.cccis.com:9002</weblogic.adminurl.workflow-egn> -->   <!-- Solaris domain  -->
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.workflow-rpv>t3://dgpa21z.cccis.com:9007</weblogic.adminurl.workflow-rpv> -->  <!-- Solaris domain  -->
+				<weblogic.targets.workflow-rpvc>WEBAPPS_REPV_CLSTER_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.css>t3://adm001.pa.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.idaam>t3://ptlidaam001.pa.cccis.com:19307</weblogic.adminurl.x86.idaam>
+				<weblogic.adminurl.x86.wa3>t3://adm001.pa.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.eznetsvcs>t3://eznetsvcsadm001.pw.cccis.com:10102</weblogic.adminurl.x86.eznetsvcs>
+
+				
+
+				<weblogic.adminurl.x86.workflow>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.adminurl.workflow-rpv>t3://adm001.pa.cccis.com:9319</weblogic.adminurl.workflow-rpv>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.pa.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<!-- Involta Consumer Applications -->
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.pa.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<oracle.bpeldeployurl.eznet/>
+				<weblogic.adminurl.x86.fnol>t3://adm001.pa.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<weblogic.adminurl.x86.vsapps>t3://adm001.pa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.vsapps2>t3://adm001.pa.cccis.com:9323</weblogic.adminurl.x86.vsapps2>
+                                <weblogic.adminurl.x86.slvgsvcs>t3://slvgsvcsadm001.pa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+
+				<!-- server not in use per UNIX Middleware - LRL 04/07/2015:
+				<weblogic.adminurl.x86.po1>t3://adm101.pa.cccis.com:9302</weblogic.adminurl.x86.po1> -->
+				<weblogic.adminurl.x86.workflow-aps>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://adm101.pa.cccis.com:9306</weblogic.adminurl.x86.eznet.temp>
+
+				<weblogic.targets.x86-clstemp>INTF_AAWS_CLSTR_001</weblogic.targets.x86-clstemp>
+
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+				<weblogic.targets.webapps-smgt3>WEBAPPS_SMGT_003</weblogic.targets.webapps-smgt3>
+				<weblogic.targets.webapps-smgt4>WEBAPPS_SMGT_004</weblogic.targets.webapps-smgt4>
+				<weblogic.targets.webapps-smgt5>WEBAPPS_SMGT_005</weblogic.targets.webapps-smgt5>
+				<weblogic.adminurl.x86.dataSync>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+				<weblogic.adminurl.x86.btchproc>t3://batchproc001.pa.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+				<weblogic.adminurl.x86.gpsvcs>t3://gpadm001.pa.cccis.com:19315</weblogic.adminurl.x86.gpsvcs>
+                                 <weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.pa.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+				<database.url.aps>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/APSP</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rps>
+				<!-- <database.url.rpsetluser>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rpsetluser>-->
+				<database.url.rpsetluser>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rpsetluser>
+<database.url.rpsadmin>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rpsadmin>
+
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/RPSPREPROCP</database.url.RPSPREPROC>
+				<database.url.spuser>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/MPBLP</database.url.spuser>
+				<database.url.ngsch>jdbc:oracle:thin:@dgeb-scan.cccis.com:1521/NGSCHP</database.url.ngsch>
+
+						<database.url.AUDRUL>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/AUDRUL</database.url.AUDRUL>
+		<database.url.BATCHFD>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/BATCHFDP</database.url.BATCHFD>
+		<database.url.BIDW>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/BIDW</database.url.BIDW>
+		<database.url.BTCHREPETL>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/BTCHREPETL</database.url.BTCHREPETL>
+		<database.url.CCCONEIDM>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CCCONEIDM</database.url.CCCONEIDM>
+		<database.url.CCCONEVAL>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CCCONEVAL</database.url.CCCONEVAL>
+		<database.url.CFAEP_RMAN>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CFAEP_RMAN</database.url.CFAEP_RMAN>
+		<database.url.CFA>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CFAP</database.url.CFA>
+		<database.url.CFARCH>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CFARCH</database.url.CFARCH>
+		<database.url.EDIREG>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/EDIREGP</database.url.EDIREG>
+		<database.url.EZNETII>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/EZNETII</database.url.EZNETII>
+		<database.url.FNOLSVC_RO>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/FNOLSVC_RO</database.url.FNOLSVC_RO>
+		<database.url.FNOLSVC>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/FNOLSVCP</database.url.FNOLSVC>
+		<database.url.INJS>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/INJSP</database.url.INJS>
+		<database.url.INTFFRMWK>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/INTFFRMWK</database.url.INTFFRMWK>
+		<database.url.INTFINBND>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/INTFINBND</database.url.INTFINBND>
+		<database.url.LGCYINTF>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/LGCYINTF</database.url.LGCYINTF>
+		<database.url.MAINTARCH>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MAINTARCH</database.url.MAINTARCH>
+		<database.url.MESG>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MESG</database.url.MESG>
+		<database.url.MQHUB>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MQHUB</database.url.MQHUB>
+		<!--<database.url.NGSCH>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/NGSCHP</database.url.NGSCH>-->
+		<database.url.OGGCFAE>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/OGGCFAEP</database.url.OGGCFAE>
+		<database.url.PANALYTICS>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/PANALYTICS</database.url.PANALYTICS>
+		<database.url.PARTSDWETL>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/PARTSDWETL</database.url.PARTSDWETL>
+		<database.url.PTLWEB>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/PTLWEB</database.url.PTLWEB>
+		<database.url.SESBCF>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/SESBCF</database.url.SESBCF>
+		<database.url.VALRP>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/VALRPP</database.url.VALRP>
+		<database.url.VLATION>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/VLATION</database.url.VLATION>
+		<database.url.APSARCH>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/APSARCHP</database.url.APSARCH>
+		<!--<database.url.APS>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/APSP</database.url.APS>-->
+		<database.url.B2B>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/B2BP</database.url.B2B>
+		<database.url.B2BVALRP>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/B2BVALRPP</database.url.B2BVALRP>
+		<database.url.CRP>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CRPP</database.url.CRP>
+		<database.url.CSSMAINT>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CSSMAINT</database.url.CSSMAINT>
+		<database.url.CSS>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/CSSP</database.url.CSS>
+		<database.url.FNOL>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/FNOLP</database.url.FNOL>
+		<database.url.MPAEP_RMAN>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MPAEP_RMAN</database.url.MPAEP_RMAN>
+		<database.url.MPA>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MPAP</database.url.MPA>
+		<database.url.MSP>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/MSPP</database.url.MSP>
+		<database.url.OGGMPAE>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/OGGMPAEP</database.url.OGGMPAE>
+		<database.url.PROC>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/PROCP</database.url.PROC>
+		<database.url.VLO>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/VLOP</database.url.VLO>
+		<database.url.CAALP_RMAN>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/CAALP_RMAN</database.url.CAALP_RMAN>
+		<database.url.CAL>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/CALP</database.url.CAL>
+		<database.url.CFARCH>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/CFARCHP</database.url.CFARCH>
+		<database.url.CFHIST>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/CFHISTP</database.url.CFHIST>
+		<database.url.PAALP_RMAN>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP_RMAN</database.url.PAALP_RMAN>
+		<database.url.PWSTGSVC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PWSTGSVCP</database.url.PWSTGSVC>
+		<!--<database.url.RPS>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/RPSP</database.url.RPS>-->
+		<!--<database.url.RPSPREPROC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/RPSPREPROCP</database.url.RPSPREPROC>-->
+		<database.url.ESP>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/ESPP</database.url.ESP>
+		<database.url.HPS>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/HPSP</database.url.HPS>
+		<database.url.ILOG>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/ILOGP</database.url.ILOG>
+		<database.url.MPBLP_RMAN>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/MPBLP_RMAN</database.url.MPBLP_RMAN>
+		<database.url.MPB>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/MPBP</database.url.MPB>
+		<database.url.PROC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PROCP</database.url.PROC>
+		<database.url.TESTSVC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/TESTSVC</database.url.TESTSVC>
+		<database.url.VD>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/VDP2</database.url.VD>
+		<database.url.VDP2>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/VDP2P</database.url.VDP2>
+		<database.url.VI>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/VIP</database.url.VI>
+			</properties>
+
+		</profile>
+
+		<profile>
+			<id>deployment.prod2</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>prod2</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.targets.fnol1>WL_FNOL_FNOLPA_001</weblogic.targets.fnol1>
+				<weblogic.targets.fnol2>WL_FNOL_FNOLPA_002</weblogic.targets.fnol2>
+				<weblogic.targets.fnol3>WL_FNOL_FNOLPA_003</weblogic.targets.fnol3>
+				<weblogic.adminurl.intf>t3://pladm101.pa.cccis.com:9306</weblogic.adminurl.intf>
+				<weblogic.adminurl.x86.intfin>t3://pladm102.pa.cccis.com:9314</weblogic.adminurl.x86.intfin>
+				<weblogic.targets.workflow-aps1>WL_WORKFLOW_APS_001</weblogic.targets.workflow-aps1>
+				<weblogic.targets.workflow-aps2>WL_WORKFLOW_APS_002</weblogic.targets.workflow-aps2>
+				<weblogic.targets.workflow-aps3>WL_WORKFLOW_APS_003</weblogic.targets.workflow-aps3>
+				<weblogic.targets.workflow-aps4>WL_WORKFLOW_APS_004</weblogic.targets.workflow-aps4>
+				<weblogic.targets.workflow-aps5>WL_WORKFLOW_APS_005</weblogic.targets.workflow-aps5>
+				<weblogic.targets.workflow-aps6>WL_WORKFLOW_APS_006</weblogic.targets.workflow-aps6>
+				<weblogic.targets.workflow-egnc>WL_WORKFLOW_WRKFLW_CLSTR_001</weblogic.targets.workflow-egnc>
+				<weblogic.targets.workflow-rpvc>WEBAPPS_REPV_CLSTER_001</weblogic.targets.workflow-rpvc>
+				<weblogic.adminurl.x86.css>t3://adm001.pa.cccis.com:9319</weblogic.adminurl.x86.css>
+				<weblogic.adminurl.x86.msg1>t3://pladm101.pa.cccis.com:9316</weblogic.adminurl.x86.msg1>
+				<weblogic.adminurl.x86.msg2>t3://pladm101.pa.cccis.com:9318</weblogic.adminurl.x86.msg2>
+				<weblogic.adminurl.x86.wa1>t3://pladm101.pa.cccis.com:9307</weblogic.adminurl.x86.wa1>
+				<weblogic.adminurl.x86.wa2>t3://pladm101.pa.cccis.com:9315</weblogic.adminurl.x86.wa2>
+				<weblogic.adminurl.x86.wa3>t3://adm001.pa.cccis.com:9317</weblogic.adminurl.x86.wa3>
+				<weblogic.adminurl.x86.eznet>t3://pladm102.pa.cccis.com:9303</weblogic.adminurl.x86.eznet>
+				<weblogic.adminurl.x86.obfs>t3://pladm102.pa.cccis.com:9308</weblogic.adminurl.x86.obfs>
+				<weblogic.adminurl.x86.idm>t3://pladm102.pa.cccis.com:9304</weblogic.adminurl.x86.idm>
+				<weblogic.adminurl.x86.workflow>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+                                <weblogic.adminurl.x86.slvgsvcs>t3://plslvgsvcsadm001.pa.cccis.com:19314</weblogic.adminurl.x86.slvgsvcs>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.adminurl.workflow-rpv>t3://adm001.pa.cccis.com:9319</weblogic.adminurl.workflow-rpv>
+				<weblogic.adminurl.x86.wa3.snmgt>t3://adm001.pa.cccis.com:9317</weblogic.adminurl.x86.wa3.snmgt>
+				<!-- Involta Consumer Applications -->
+				<weblogic.adminurl.x86.reprocess>t3://reproc001.pa.cccis.com:9313</weblogic.adminurl.x86.reprocess>
+				<oracle.bpeldeployurl.eznet/>
+				<weblogic.adminurl.x86.fnol>t3://adm001.pa.cccis.com:9310</weblogic.adminurl.x86.fnol>
+				<weblogic.adminurl.x86.vsapps>t3://adm001.pa.cccis.com:9312</weblogic.adminurl.x86.vsapps>
+				<weblogic.adminurl.x86.workflow-aps>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.workflow-aps>
+				<!-- Temporary  domains and cluster details for EZNET deployment[inboundassignment-mdb-ear], Have to remove the EZNET issue resolved-->
+				<weblogic.adminurl.x86.eznet.temp>t3://pladm101.pa.cccis.com:9306</weblogic.adminurl.x86.eznet.temp>
+				<weblogic.adminurl.x86.dataSync>t3://adm001.pa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.x86-dataSync>
+				<weblogic.targets.x86-clstemp>INTF_AAWS_CLSTR_001</weblogic.targets.x86-clstemp>
+				<weblogic.targets.x86-prcmtc>WORKFLOW_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.targets.webapps-smgt1>WEBAPPS_SMGT_001</weblogic.targets.webapps-smgt1>
+				<weblogic.targets.webapps-smgt2>WEBAPPS_SMGT_002</weblogic.targets.webapps-smgt2>
+				<weblogic.targets.webapps-smgt3>WEBAPPS_SMGT_003</weblogic.targets.webapps-smgt3>
+				<weblogic.targets.webapps-smgt4>WEBAPPS_SMGT_004</weblogic.targets.webapps-smgt4>
+				<weblogic.targets.webapps-smgt5>WEBAPPS_SMGT_005</weblogic.targets.webapps-smgt5>
+				<weblogic.adminurl.x86.btchproc>t3://batchproc001.pa.cccis.com:19304</weblogic.adminurl.x86.btchproc>
+                                <weblogic.adminurl.x86.svsvcs>t3://svsvcsadm001.pa.cccis.com:19315</weblogic.adminurl.x86.svsvcs>
+				<database.url.aps>jdbc:oracle:thin:@dgea-scan.cccis.com:1521/APSP</database.url.aps>
+				<database.url.rps>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rps>
+				<database.url.rpsetluser>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/PAALP</database.url.rpsetluser>
+				<database.url.RPSPREPROC>jdbc:oracle:thin:@dgpldb01-scan.cccis.com:1521/RPSPREPROCP</database.url.RPSPREPROC>
+			</properties>	
+		</profile>
+
+		<profile>
+			<id>deployment.prod5</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+					<value>prod5</value>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.adminurl.x86.workflow>t3://rsadm001.pa.cccis.com:9309</weblogic.adminurl.x86.workflow>
+				<weblogic.adminurl.x86.ams>t3://rsadm001.pw.cccis.com:11107</weblogic.adminurl.x86.ams>
+				<weblogic.targets.x86-prcmtc>PARTS_PRCMT_CLSTR_001</weblogic.targets.x86-prcmtc>
+				<weblogic.adminurl.x86.dataSync>t3://rsadm001.pa.cccis.com:9309</weblogic.adminurl.x86.dataSync>
+				<weblogic.targets.x86-dataSync>PARTS_SSP_CLSTR_001</weblogic.targets.x86-dataSync>
+				<!-- Database URLS -->
+				<database.url.procurement>jdbc:oracle:thin:@rspldb01-scan.cccis.com:1521/PROCP</database.url.procurement>
+			</properties>	
+		</profile>
+		<profile>
+			<id>deployment.all</id>
+			<activation>
+				<property>
+					<name>deployment.environment</name>
+				</property>
+			</activation>
+			<properties>
+				<weblogic.targets.x86-mdbc>EZNET_MDB_CLSTR_001</weblogic.targets.x86-mdbc>
+				<weblogic.targets.x86-apmbpelc>EZNET_APMBPEL_CLSTR_001</weblogic.targets.x86-apmbpelc>
+				<weblogic.targets.x86-servec>EZNET_SERV_CLSTR_001</weblogic.targets.x86-servec>
+				<weblogic.targets.x86-fmwkic>INTF_FMWK_CLSTR_001</weblogic.targets.x86-fmwkic>
+				<weblogic.targets.x86-avsrc>WEBAPPS_AVSR_CLSTR_001</weblogic.targets.x86-avsrc>
+				<weblogic.targets.x86-avserc>WEBAPPS_AVSER_CLSTR_001</weblogic.targets.x86-avserc>
+				<weblogic.targets.x86-aigc>MSGAPPS_AIG_CLSTR_001</weblogic.targets.x86-aigc>
+				<weblogic.targets.x86-bamc>MSGAPPS_BAM_CLSTR_001</weblogic.targets.x86-bamc>
+				<weblogic.targets.x86-bndlc>MSGAPPS_BNDL_CLSTR_001</weblogic.targets.x86-bndlc>
+				<weblogic.targets.x86-clctrc>MSGAPPS_CLCTR_CLSTR_001</weblogic.targets.x86-clctrc>
+				<weblogic.targets.x86-compc>WEBAPPS_COMP_CLSTR_001</weblogic.targets.x86-compc>
+				<weblogic.targets.x86-cvbc>MSGAPPS_CVB_CLSTR_001</weblogic.targets.x86-cvbc>
+				<weblogic.targets.x86-dmdestc>MSGAPPS_DMDEST_CLSTR_001</weblogic.targets.x86-dmdestc>
+				<weblogic.targets.x86-wdmdestc>WEBAPPS_DMNDEST_CLSTR_001</weblogic.targets.x86-wdmdestc>
+				<weblogic.targets.x86-wtfac>WEBAPPS_TFA_CLSTR_001</weblogic.targets.x86-wtfac>
+				<weblogic.targets.x86-edrp1c>WEBAPPS_EDRP_CLSTR_001</weblogic.targets.x86-edrp1c>
+				<weblogic.targets.x86-emilc>MSGAPPS_EMIL_CLSTR_001</weblogic.targets.x86-emilc>
+				<weblogic.targets.x86-feac>WEBAPPS_FEA_CLSTR_001</weblogic.targets.x86-feac>
+				<weblogic.targets.x86-fmwkc>MSGAPPS_FMWK_CLSTR_001</weblogic.targets.x86-fmwkc>
+				<weblogic.targets.x86-msgserv>MSGAPPS_SERV_CLSTR_001</weblogic.targets.x86-msgserv>
+				<weblogic.targets.x86-iatpac>MSGAPPS_IATPA_CLSTR_001</weblogic.targets.x86-iatpac>
+				<!-- <weblogic.targets.x86-idmc>IDM_IDM_CLSTR_001</weblogic.targets.x86-idmc> -->
+				<weblogic.targets.x86-idmwsc>IDM_WS_CLSTR_001</weblogic.targets.x86-idmwsc>
+				<weblogic.targets.x86-intfc>MSGAPPS_INTF_CLSTR_001</weblogic.targets.x86-intfc>
+				<weblogic.targets.x86-jivec>WEBAPPS_JIVE_CLSTR_001</weblogic.targets.x86-jivec>
+				<weblogic.targets.x86-jmsc>MSGAPPS_JMS_CLSTR_001</weblogic.targets.x86-jmsc>
+				<weblogic.targets.x86-jrnlc>MSGAPPS_JRNL_CLSTR_001</weblogic.targets.x86-jrnlc>
+				<weblogic.targets.x86-mq2ac>MSGAPPS_MQ2AQ_CLSTR_001</weblogic.targets.x86-mq2ac>
+				<weblogic.targets.x86-msgc>MSGAPPS_MSG_CLSTR_001</weblogic.targets.x86-msgc>
+				<weblogic.targets.x86-odemsc>MSGAPPS_ODEMS_CLSTR_001</weblogic.targets.x86-odemsc>
+				<weblogic.targets.x86-plrtc>MSGAPPS_PLRT_CLSTR_001</weblogic.targets.x86-plrtc>
+				<weblogic.targets.x86-qaarc>MSGAPPS_QAAR_CLSTR_001</weblogic.targets.x86-qaarc>
+				<weblogic.targets.x86-mreic>MSGAPPS_REI_CLSTR_001</weblogic.targets.x86-mreic>
+				<weblogic.targets.x86-wreic>WEBAPPS_REI_CLSTR_001</weblogic.targets.x86-wreic>
+				<weblogic.targets.x86-wregc>WEBAPPS_REG_CLSTR_001</weblogic.targets.x86-wregc>
+				<weblogic.targets.css-rpvc>CSSAPPS_REPV_CLSTR_001</weblogic.targets.css-rpvc>
+				<weblogic.targets.x86-wreg001>WEBAPPS_REG_001</weblogic.targets.x86-wreg001>
+				<weblogic.targets.x86-rmdc>WEBAPPS_RMD_CLSTR_001</weblogic.targets.x86-rmdc>
+				<weblogic.targets.x86-servc>WEBAPPS_SERV_CLSTR_001</weblogic.targets.x86-servc>
+				<weblogic.targets.x86-slvgc>MSGAPPS_SLVG_CLSTR_001</weblogic.targets.x86-slvgc>
+				<weblogic.targets.x86-wslvgc>WEBAPPS_SLVG_CLSTR_001</weblogic.targets.x86-wslvgc>
+				<weblogic.targets.x86-subroc>MSGAPPS_SUBRO_CLSTR_001</weblogic.targets.x86-subroc>
+				<weblogic.targets.x86-uac>WEBAPPS_UA_CLSTR_001</weblogic.targets.x86-uac>
+				<weblogic.targets.x86-tslrc>MSGAPPS_TSLR_CLSTR_001</weblogic.targets.x86-tslrc>
+				<weblogic.targets.x86-wflowc>MSGAPPS_WFLOW_CLSTR_001</weblogic.targets.x86-wflowc>
+				<weblogic.targets.x86-wfengc>MSGAPPS_WFENG_CLSTR_001</weblogic.targets.x86-wfengc>
+				<weblogic.targets.x86-wic1c>WEBAPPS_WIC_CLSTR_001</weblogic.targets.x86-wic1c>
+				<weblogic.targets.x86-visc>WEBAPPS_VIS_CLSTR_001</weblogic.targets.x86-visc>
+				<weblogic.targets.x86-vswbmc>MSGAPPS_VSWB_CLSTR_001</weblogic.targets.x86-vswbmc>
+				<weblogic.targets.x86-vswbc>WEBAPPS_VSWB_CLSTR_001</weblogic.targets.x86-vswbc>
+				<weblogic.targets.x86-vsvlc>MSGAPPS_VSVL_CLSTR_001</weblogic.targets.x86-vsvlc>
+				<weblogic.targets.x86-vsvlwc>WEBAPPS_VSVL_CLSTR_001</weblogic.targets.x86-vsvlwc>
+				<weblogic.targets.x86-ptlm1>PTLAPPS_PTL_CLSTR_001</weblogic.targets.x86-ptlm1>
+				<weblogic.targets.x86-ptlm2/>
+				<!--weblogic.targets.x86-ptlm2>PORTAL_PTL_002</weblogic.targets.x86-ptlm2-->
+				<weblogic.targets.intf>WL_FRAMEWORK_INTFFRMWK_CLSTR_001</weblogic.targets.intf>
+				<weblogic.targets.intf-compc>INTF_COMP_CLSTR_001</weblogic.targets.intf-compc>
+				<weblogic.targets.intf-webc>INTF_WEB_CLSTR_001</weblogic.targets.intf-webc>
+				<weblogic.targets.intf-servc>INTF_SERV_CLSTR_001</weblogic.targets.intf-servc>
+				<weblogic.targets.intf-servc>INTF_SERV_CLSTR_001</weblogic.targets.intf-servc>
+				<weblogic.targets.intfadm>WL_FRAMEWORK_ADMINSERVER</weblogic.targets.intfadm>
+				<weblogic.targets.intf-intfc>INTF_INTF_CLSTR_001</weblogic.targets.intf-intfc>
+				<weblogic.targets.intf-intfw>INTF_WS_CLSTR_001</weblogic.targets.intf-intfw>				
+				<weblogic.targets.x86-idmservc>IDM_SERV_CLSTR_001</weblogic.targets.x86-idmservc>
+				<weblogic.targets.x86-nschc>WEBAPPS_NSCH_CLSTR_001</weblogic.targets.x86-nschc>
+				<weblogic.targets.workflowx86-apsc>WORKFLOW_APS_CLSTR_001</weblogic.targets.workflowx86-apsc>
+				<weblogic.targets.workflowx86-apsweb>WORKFLOW_APSWEB_CLSTR_001</weblogic.targets.workflowx86-apsweb>
+				<weblogic.targets.workflow-apsmsg>WORKFLOW_APSMSG_CLSTR_001</weblogic.targets.workflow-apsmsg>
+				<weblogic.targets.x86-cwlvc>WEBAPPS_CWLV_CLSTR_001</weblogic.targets.x86-cwlvc>
+				<weblogic.targets.x86-idmprflc>IDM_PRFL_CLSTR_001</weblogic.targets.x86-idmprflc>	
+				<weblogic.targets.workflow-rpvc>CSSAPPS_REPV_CLSTR_001</weblogic.targets.workflow-rpvc>
+				<!-- Involta Consumer Applications -->
+				<weblogic.targets.x86-idmmdb>IDM_MDB_CLSTR_001</weblogic.targets.x86-idmmdb>
+				<weblogic.targets.x86-reproc>REPROC_APM_CLSTR_001</weblogic.targets.x86-reproc>
+				<weblogic.targets.x86-scptl>WORKFLOW_SCPTL_CLSTR_001</weblogic.targets.x86-scptl>
+				<weblogic.targets.x86-intfbc>INTF_BAM_CLSTR_001</weblogic.targets.x86-intfbc>
+				<weblogic.targets.x86-intfjc>INTF_JRNL_CLSTR_001</weblogic.targets.x86-intfjc>
+				<weblogic.targets.x86-intfjr>INTF_INJR_CLSTR_001</weblogic.targets.x86-intfjr>
+				<weblogic.targets.x86-eznetbc>EZNET_BAM_CLSTR_001</weblogic.targets.x86-eznetbc>
+				<weblogic.targets.x86-eznetjc>EZNET_JRNL_CLSTR_001</weblogic.targets.x86-eznetjc>
+				<weblogic.targets.x86-rpsfc>WORKFLOW_RPSF_CLSTR_001</weblogic.targets.x86-rpsfc>
+				<weblogic.targets.x86-aawsc>INTF_AAWS_CLSTR_001</weblogic.targets.x86-aawsc>
+				<weblogic.targets.x86-webc>FNOL_WEB_CLSTR_001</weblogic.targets.x86-webc>
+				<weblogic.targets.x86-pac>FNOL_PA_CLSTR_001</weblogic.targets.x86-pac>
+				<weblogic.targets.x86-fnolmsgc>FNOL_MSG_CLSTR_001</weblogic.targets.x86-fnolmsgc>
+				<weblogic.targets.x86-servf>FNOL_SERV_CLSTR_001</weblogic.targets.x86-servf>
+				<weblogic.targets.x86-fnolwsc>FNOL_WS_CLSTR_001</weblogic.targets.x86-fnolwsc>
+				<weblogic.targets.x86-ptlc>PTLAPPS_PTL_CLSTR_001</weblogic.targets.x86-ptlc>
+				<weblogic.targets.x86-wptlc>WEBAPPS_PTL_CLSTR_001</weblogic.targets.x86-wptlc>
+				<weblogic.targets.x86-jmsc>FNOL_JMS_CLSTR_001</weblogic.targets.x86-jmsc>
+				<weblogic.targets.x86-intfmsg>INTF_MSG_CLSTR_001</weblogic.targets.x86-intfmsg>
+				<weblogic.targets.x86-vsapps2crv>VSAPPS_CRV_CLSTR_001</weblogic.targets.x86-vsapps2crv>	
+				<weblogic.targets.x86-vsappsdl>VSAPPS_DL_CLSTR_001</weblogic.targets.x86-vsappsdl>
+				<weblogic.targets.x86-vsappsjms>VSAPPS_JMS_CLSTR_001</weblogic.targets.x86-vsappsjms>
+				<weblogic.targets.x86-vsappsmsg>VSAPPS_MSG_CLSTR_001</weblogic.targets.x86-vsappsmsg>
+				<weblogic.targets.x86-vsappsvsvl>VSAPPS_VSVL_CLSTR_001</weblogic.targets.x86-vsappsvsvl>
+				<weblogic.targets.x86-vsappsvsvl2>VSAPPS_VSVL2_CLSTR_001</weblogic.targets.x86-vsappsvsvl2>
+				<weblogic.targets.x86-vsappstfac>VSAPPS_TFA_CLSTR_001</weblogic.targets.x86-vsappstfac>
+				<weblogic.targets.x86-vsappsvis>VSAPPS_VIS_CLSTR_001</weblogic.targets.x86-vsappsvis>
+				<weblogic.targets.x86-eznetws>EZNET_WS_CLSTR_001</weblogic.targets.x86-eznetws>
+				<weblogic.targets.x86-owsm>EZNETSVCS_OWSM_CLSTR_001</weblogic.targets.x86-owsm>
+				<weblogic.targets.x86-repjrnlc>REPROC_JRNL_CLSTR_001</weblogic.targets.x86-repjrnlc>
+				<weblogic.targets.x86-repbamc>REPROC_BAM_CLSTR_001</weblogic.targets.x86-repbamc>
+				<weblogic.targets.x86-wbamc>WEBAPPS_BAM_CLSTR_001</weblogic.targets.x86-wbamc>
+				<weblogic.targets.x86-obfsobfc>INTFOBFS_OBF_CLSTR_001</weblogic.targets.x86-obfsobfc>
+				<weblogic.targets.x86-obfsoservc>INTFOBFS_SERV_CLSTR_001</weblogic.targets.x86-obfsoservc>
+				<weblogic.targets.x86-obfswsc>INTFOBFS_WS_CLSTR_001</weblogic.targets.x86-obfswsc>
+				<weblogic.targets.x86-intfinaawsc>INTFIN_AAWS_CLSTR_001</weblogic.targets.x86-intfinaawsc> 
+				<weblogic.targets.x86-intfinmsgc>INTFIN_MSG_CLSTR_001</weblogic.targets.x86-intfinmsgc> 
+				<weblogic.targets.x86-intfinservc>INTFIN_SERV_CLSTR_001</weblogic.targets.x86-intfinservc>
+				<weblogic.targets.x86-intfinwsc>INTFIN_WS_CLSTR_001</weblogic.targets.x86-intfinwsc>
+				<weblogic.targets.x86-workflow-vcs>WORKFLOW_VCS_CLSTR_001</weblogic.targets.x86-workflow-vcs>
+				<weblogic.targets.x86-aps-ssp>PARTS_SSP_CLSTR_001</weblogic.targets.x86-aps-ssp>
+				<weblogic.targets.x86-vsappssvm>VSAPPS_SVM_CLSTR_001</weblogic.targets.x86-vsappssvm>
+				<weblogic.targets.x86-clmstat>MSGAPPS_CLMSTAT_CLSTR_001</weblogic.targets.x86-clmstat>
+				<weblogic.targets.x86-vsappswsc>VSAPPS_WS_CLSTR_001</weblogic.targets.x86-vsappswsc>
+				<weblogic.targets.x86-audrulc>WEBAPPS_AUDRUL_CLSTR_001</weblogic.targets.x86-audrulc>
+				<weblogic.targets.x86-ams>AMS_OA_CLSTR_001</weblogic.targets.x86-ams>
+				<weblogic.targets.x86-plcy>PTLIDAAM_PLCYMGR_CLSTR_001</weblogic.targets.x86-plcy>				
+				<weblogic.targets.x86-snmgtc-w3>WEBAPPS_SNMGT_CLSTR_001</weblogic.targets.x86-snmgtc-w3>
+				<weblogic.targets.x86-snmgtc-bproc>BATCHPROC_SNMGT_CLSTR_001</weblogic.targets.x86-snmgtc-bproc>
+				<weblogic.targets.x86-gpsvcsprop>GPSVCS_PROP_CLSTR_001</weblogic.targets.x86-gpsvcsprop>
+				<weblogic.targets.x86-gpsvcsserv>GPSVCS_SERV_CLSTR_001</weblogic.targets.x86-gpsvcsserv>
+				<weblogic.targets.x86-svsvcsdl>SVSVCS_DL_CLSTR_001</weblogic.targets.x86-svsvcsdl>
+				<weblogic.targets.x86-svsvcsmsg>SVSVCS_MSG_CLSTR_001</weblogic.targets.x86-svsvcsmsg>
+ <weblogic.targets.x86-svsvcsweb>SVSVCS_WEB_CLSTR_001</weblogic.targets.x86-svsvcsweb>
+ <weblogic.targets.x86-svsvcsws>SVSVCS_WS_CLSTR_001</weblogic.targets.x86-svsvcsws>
+ <weblogic.targets.x86-vsapps2crvdl>VSAPPS_CRVDL_CLSTR_001</weblogic.targets.x86-vsapps2crvdl>
+				<weblogic.targets.x86-slvgsvcsserv>SLVGSVCS_SERV_CLSTR_001</weblogic.targets.x86-slvgsvcsserv>
+ 				<weblogic.targets.x86-slvgsvcsmgmt>SLVGSVCS_MGMT_CLSTR_001</weblogic.targets.x86-slvgsvcsmgmt>
+				<weblogic.targets.x86-slvgsvcsmsg>SLVGSVCS_MSG_CLSTR_001</weblogic.targets.x86-slvgsvcsmsg>
+				<weblogic.targets.x86-slvgsvcsweb>SLVGSVCS_WEB_CLSTR_001</weblogic.targets.x86-slvgsvcsweb>
+				<weblogic.targets.x86-slvgsvcsws>SLVGSVCS_WS_CLSTR_001</weblogic.targets.x86-slvgsvcsws>
+                                <weblogic.targets.x86-intfjms>INTF_JMS_CLSTR_001</weblogic.targets.x86-intfjms>
+                                <weblogic.targets.x86-vsapps2crvws>VSAPPS_CRVWS_CLSTR_001</weblogic.targets.x86-vsapps2crvws>
+<weblogic.targets.x86-vsappsmgmt>VSAPPS_MGMT_CLSTR_001</weblogic.targets.x86-vsappsmgmt>
+
+			</properties>	
+		</profile>
+
+	</profiles>
+</settings>
+
+
+
+

@@ -1,0 +1,66 @@
+<!-- Load static files -->
+<script type=text/javascript src="{{ url_for('static', filename='js/jquery-1.12.2.min.js') }}"></script>
+<script type=text/javascript src="{{ url_for('static', filename='js/jquery-ui-1.11.4.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/datatables.min.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/settingsxml.css')}}">
+
+<!--RIGHT-DIV Table View  -->
+<div id="right_page" class="right_page">
+    <div class="input-group" id="searchDiv">
+        <!--SEARCH BOX Here... -->
+        <span class="input-group-addon" id="myenv_id" >{{my_env}}</span>
+        <input type="text" id="searchTerm" aria-describedby="basic-addon3" class="search_box" onkeyup="search_table()" placeholder="search here" />
+    </div>
+   <br>
+   <br>
+
+
+
+    <!--BUTTONS Here.... -->
+    <button id="ADUC" class="btn btn-primary" onclick="add_row()" >Add</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="ADUC" class="btn btn-danger" onclick="delete_row()" >Remove</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="ADUC" class="btn btn-warning" onclick="return update_xml()" >Update</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="ADUC" class="btn btn-success" data-toggle="modal" data-target="#commitModal" data-whatever="@commit">Commit</button>
+    
+    <br><br><br>
+
+    <!--TABLE STARTS Here... -->
+    <div id="mytable">
+        <table id="dataTable" class="table table-hover">
+            <thead>
+                <th style="width:45px;">#</th><th>Tag Name</th><th>Value</th>
+            </thead>
+            <tbody id="dataTable_tbody">
+                <!-- Rows will be added by Handlers... -->
+            </tbody>
+        </table>
+    </div><!--myTable div end -->
+</div>
+
+<!--MODAL FOR COMMIT MSG -->
+<div class="modal fade" id="commitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel" style="font-family:ubuntu mono;font-size=60px;"><strong>SVN COMMIT !</strong></h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="user-name" class="btn btn-primary btn-sm">Hey {{user}}</label>
+                </div>
+                <div class="form-group">
+                    <label for="B-id" class="control-label" style="font-family:ubuntu;font-size=40px;">B-ID (XXXXX):</label>
+                    <input type="text" class="form-control" style="font-family:serif;font-size=20px;" id="B-id">
+                </div>
+                <div class="form-group">
+                    <label for="message-text" class="control-label" style="font-family:ubuntu;font-size=40px;">Message:</label>
+                    <input class="form-control" style="font-family:serif;font-size=20px;" id="message-text"></input>
+                </div>
+                <br/>
+                <button id="myBtn" class="btn btn-default btn-lg" data-dismiss="modal"><strong>Close</strong></button>&nbsp;&nbsp;&nbsp;
+                <button id="myBtn" class="btn btn-success btn-lg" data-dismiss="modal" onclick="return svn_commit()">Commit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--MODAL ENDS Here... -->

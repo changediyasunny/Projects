@@ -1,0 +1,16 @@
+{% macro dropdown_base_div(type, arr, spinner) %}
+  <h2 class="dropdown_title">{{ type|title }}</h2>
+  <div class="dropdown_container" id="{{ type }}" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+    <input type="checkbox" class="checkbox select_all select_all_{{ type }}">
+    {% for elem in arr %}
+      <div class="dropdown_{{ type }} dropdown_item">{{ elem }}</div>
+    {% endfor %}
+  </div>
+  </br>
+{% endmacro %}
+
+{% macro submit_button() %}
+  </br>
+  <button class='submit'>Run</button>
+  <div id="error_msg" class='error_msg tooltip' title="Error"></div>
+{% endmacro %}

@@ -1,0 +1,76 @@
+from flask import Flask, request, url_for, render_template
+from flask import abort, redirect, flash, jsonify, session
+import sys
+from collections import defaultdict
+
+#check for domain.py file
+from domain import *
+import json
+
+#from routes import *
+
+app = Flask(__name__)
+
+#Global vars for environment and fields dir
+global my_env
+global fields
+
+
+@app.route('/', methods=["GET", "POST"])
+def index():
+    if request.method == 'POST':  # Respond to search request.
+    	# request.form['name-of-select-tag-there']
+    	env = request.form['query']	#{<select name="">, <option value=""> }
+    	global my_env
+    	my_env = str(env)
+    	#print(request.form)
+    	fields = Domain(env).get_env_data()
+    	#return render_template('update.html', fields=fields)
+    	#print("Flask:Index():POST method...")
+    	#print(fields)
+    	return render_template('updateForm.html', fields=fields)
+
+    elif request.method == 'GET':
+		#GET method at start...
+        print("into INDEX GEt method")
+        env_list = Domain("temp").get_env_var()
+        return render_template('envForm.html', env_list=env_list)
+
+
+@app.route('/commit', methods=["GET","POST"])
+def commit():
+
+    if request.method == "POST":
+        global fields
+        print("Flask: CommiT method")
+        cmt_mesg = request.json
+        #print(cmt_mesg)
+        #Execute back-end commands here...
+        vals = commit_to_server(str(cmt_mesg))
+        #print(vals)
+	
+    #print(request.method)
+    return render_template('commitPage.html')
+
+
+
+@app.route('/update', methods=["GET", "POST"])
+def update():
+
+    if request.method == 'POST':  # Respond to search request.
+    	global my_env
+    	global fields
+    	
+    	#tag_name = request.form['tag_name'] #this is name of "input" in "results.html"
+    	update_list = request.json
+    	#print(update_list)
+    	myDict = Domain(my_env).update_xml_file(update_list)
+    	fields = myDict   	
+    	print("Flask: Update method got values...") # %s" % fields)
+
+    return render_template('updateForm.html', fields=fields)
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

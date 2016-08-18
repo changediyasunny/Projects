@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title> Console !</title>
+</head>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.12.4.js')}}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<body>
+  <h2>Select Environment:</h2>
+    <form name="query" action="/" method='POST' >
+  		<select name="query">
+            {% for env in env_list %}
+    		<option value="{{env}}">{{env}}</option>
+            {% endfor %}
+  		</select>
+  		<input type="submit" value="search">
+	</form>
+</body>
+</html>

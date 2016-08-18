@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+  {% include 'blocks/navbar.html' %}
+{% endblock %}
+
+<!-- left navigation panel -->
+{% block leftNavPanel %}
+	{% include 'deployments/settingsxml/myLeftPanel.html' %}
+{% endblock %}
+
+<!-- right navigation panel -->
+{% block rightNavPanel %}
+	{% include 'deployments/settingsxml/myRightPanel.html' %}
+{% endblock %}

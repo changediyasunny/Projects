@@ -1,0 +1,6 @@
+OPTS = "first = commit \ 
+oops! = I broke everything! \ 
+but = I'm still not going to fix it \ 
+fourth = commit \ 
+fifth = commit \ 
+I = really should fix this \ "

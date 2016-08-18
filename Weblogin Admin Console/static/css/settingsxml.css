@@ -1,0 +1,160 @@
+#left_page{
+    float: left;
+    width: 76%;
+    height: 100%;
+    margin-left: 6%;
+    margin-top: 6%;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+#msgCenter{
+
+    font-family: san serif;
+    font-size: 21px;
+    margin-left: 6%;
+    width: 76%;
+    height: 100%;
+    margin-top: 100%;
+}
+
+#right_page{
+    
+    width: 80%;
+    height: 100%;
+}
+
+#searchDiv{
+    display: inline-block;
+    width: 80%;
+    height: 5%;
+    margin-top: 2%;
+}
+
+#searchTerm{
+    font-size: 20px;
+    margin-top: 0%;
+    width: 30%;
+    height: 5%;
+    
+
+}
+
+#myenv_id{
+    width: 10%;
+    font-size: 20px;
+    /*display: inline-block;*/
+    background-color: darkslategray;
+    color: gold;
+    float: left;
+}
+
+#ADUC{
+    height: 40px;
+    width: 9%;
+    font-size: 17px;
+
+}
+
+#myBtn{
+
+    height: 10%;
+    width: 18%;
+}
+
+
+#testtbody{
+  font:1.2em normal Arial,sans-serif;
+  color:#0F0F0F;
+  overflow-y: auto;
+}
+#testtbody tr:nth-child(odd){
+  background:#FFFFB9;
+}
+#testbody tr:nth-child(even){
+  background:#DDFFDD;
+}
+
+#test-thead{
+
+    background-color:#167aa1;
+    color:white;
+    font-family: sans-serif;
+    font-size:20px;
+}
+
+
+tbody {
+    color: maroon;
+    overflow-y: auto;
+    font-family: ubuntu;
+}
+
+tbody tr:nth-child(even) {
+    background: navajowhite;
+}
+tbody tr:nth-child(odd) {
+    background: beige;
+}
+
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout:fixed;
+}
+
+table td{
+    word-wrap:break-word;
+    font-size: 15px;
+    font:ubuntu;
+
+}
+
+
+thead {
+    background-color: darkslategrey;
+    color: burlywood;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+#envText{
+    background-color:white;
+    height:60px;
+    width:100px;
+    font-size:22px;
+    font-family: san serif;
+    color:#010d0d;
+
+}
+
+
+#mytable{
+    height:600px;
+    width: auto;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+#dataTable{
+    table-layout: fixed;
+    word-wrap:break-word;
+}
+
+
+
+#searchButton{
+    height:45px;
+    background-color:#167aa1;
+}
+
+
+
+
+form{
+    display: inline;
+}
+
+
