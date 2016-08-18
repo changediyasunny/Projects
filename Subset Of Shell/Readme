@@ -1,0 +1,15 @@
+- This is new Shell.
+- All modules are integrated into single file for simplicity of memory handling and use.
+- "my_shell" executable is also provided.
+
+
+To RUN:
+
+1. gcc my_shell.c
+2. ./a.out
+
+OR
+1. gcc -o my_shell my_shell.c
+2. ./my_shell
+
+ 
