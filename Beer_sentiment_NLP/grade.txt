@@ -1,0 +1,3 @@
+70/75
+
+This project classifies beer reviews as positive or negative. Overall, the project does a nice job of collecting novel data, exploring a number of feature representations, and evaluating the results. As mentioned in class, the AFINN features may be misleading the classifier for terms like "bitter," which can be positive for beers. Otherwise, it would have been good to explore alternative classification algorithms

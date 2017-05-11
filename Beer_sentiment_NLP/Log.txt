@@ -1,0 +1,1578 @@
+mean score: 3.4405 | variance: 0.4044 | stand daviation: 0.6359
+total neutral reviews: 0
+train reviews: 1100 | train labels = 1100
+
+word2vec model loaded from file.
+([<function token_features at 0x7f791dd047b8>], 2)
+Accuracy: (0.9795454545454545, 0.70272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>], 4)
+Accuracy: (0.96659090909090906, 0.7018181818181819)
+
+
+([<function token_features at 0x7f791dd047b8>], 5)
+Accuracy: (0.96363636363636362, 0.70272727272727276)
+
+
+([<function token_pair_features at 0x7f791d48f048>], 2)
+Accuracy: (0.99636363636363634, 0.69090909090909092)
+
+
+([<function token_pair_features at 0x7f791d48f048>], 4)
+Accuracy: (0.9872727272727273, 0.67272727272727262)
+
+
+([<function token_pair_features at 0x7f791d48f048>], 5)
+Accuracy: (0.98159090909090918, 0.65272727272727271)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>], 2)
+Accuracy: (0.80954545454545457, 0.66545454545454552)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>], 4)
+Accuracy: (0.73750000000000004, 0.65909090909090906)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>], 5)
+Accuracy: (0.72886363636363638, 0.65909090909090906)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.81545454545454543, 0.67909090909090897)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.72318181818181815, 0.66909090909090907)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.70999999999999996, 0.67363636363636359)
+
+
+([<function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.69431818181818172, 0.69454545454545458)
+
+
+([<function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.69431818181818172, 0.69454545454545458)
+
+
+([<function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.69431818181818172, 0.69454545454545458)
+
+
+([<function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71181818181818168)
+
+
+([<function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68636363636363629)
+
+
+([<function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.6836363636363636)
+
+
+([<function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.69499999999999995, 0.69090909090909092)
+
+
+([<function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.69499999999999995, 0.69090909090909092)
+
+
+([<function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.69499999999999995, 0.69090909090909092)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>], 2)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>], 4)
+Accuracy: (0.99795454545454554, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>], 5)
+Accuracy: (0.99795454545454554, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>], 2)
+Accuracy: (0.99250000000000005, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>], 4)
+Accuracy: (0.97840909090909101, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>], 5)
+Accuracy: (0.97249999999999992, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99681818181818183, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.97931818181818175, 0.70545454545454545)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.97363636363636363, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.9795454545454545, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.96613636363636368, 0.7036363636363635)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.96181818181818191, 0.70363636363636373)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68909090909090909)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68818181818181823)
+
+
+([<function token_features at 0x7f791dd047b8>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.97795454545454541, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.96590909090909105, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.96113636363636368, 0.70818181818181813)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 2)
+Accuracy: (0.99636363636363634, 0.68999999999999995)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 4)
+Accuracy: (0.9872727272727273, 0.66818181818181821)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 5)
+Accuracy: (0.9829545454545453, 0.65181818181818185)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99636363636363634, 0.69545454545454544)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.98818181818181805, 0.67454545454545456)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.98363636363636375, 0.66181818181818186)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99636363636363634, 0.69545454545454544)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.9872727272727273, 0.67181818181818187)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.98159090909090918, 0.65272727272727271)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.72818181818181815)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818168)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69818181818181813)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.69454545454545458)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98750000000000004, 0.67181818181818187)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98090909090909106, 0.6581818181818182)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.88886363636363652, 0.66909090909090918)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.76863636363636356, 0.65363636363636357)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.74750000000000005, 0.65454545454545454)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.8129545454545456, 0.67272727272727273)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.74204545454545456, 0.66909090909090918)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.73181818181818181, 0.67090909090909101)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99931818181818188, 0.71545454545454545)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68727272727272726)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68545454545454543)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.82090909090909092, 0.67999999999999994)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.74818181818181828, 0.6709090909090909)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.73522727272727284, 0.67636363636363639)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.81954545454545458, 0.68181818181818188)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.72636363636363643, 0.66999999999999993)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.71204545454545465, 0.67727272727272736)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71545454545454545)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454555)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.6890909090909092)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.82363636363636361, 0.6836363636363636)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.73068181818181821, 0.67454545454545456)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.7168181818181818, 0.67999999999999994)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71454545454545448)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68454545454545457)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68454545454545446)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.69568181818181818, 0.69272727272727275)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.69568181818181818, 0.69272727272727275)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.69568181818181818, 0.69272727272727275)
+
+
+([<function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.71363636363636362)
+
+
+([<function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69181818181818178)
+
+
+([<function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.68272727272727285)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 2)
+Accuracy: (0.99909090909090903, 0.70454545454545459)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 4)
+Accuracy: (0.99795454545454554, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>], 5)
+Accuracy: (0.99795454545454554, 0.69999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99909090909090903, 0.70454545454545459)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.99795454545454554, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.99795454545454554, 0.69818181818181813)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99909090909090903, 0.70545454545454545)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.99795454545454554, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.9977272727272728, 0.69999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99954545454545463, 0.73090909090909095)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70000000000000007)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99840909090909091, 0.71272727272727265)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.69818181818181824)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99840909090909091, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.9856818181818181, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.98022727272727272, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99272727272727279, 0.7018181818181819)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.97772727272727278, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.97227272727272729, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99977272727272726, 0.70636363636363642)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68636363636363629)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68545454545454543)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99227272727272742, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.97704545454545444, 0.70272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97181818181818191, 0.70545454545454533)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99681818181818183, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.97977272727272724, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.97340909090909089, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71272727272727265)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69000000000000006)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.6836363636363636)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.71272727272727265)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.97863636363636375, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97249999999999992, 0.71181818181818168)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.70909090909090922)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68909090909090909)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68727272727272726)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.97772727272727278, 0.70636363636363642)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.96613636363636368, 0.70363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.95977272727272722, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.70363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69000000000000006)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99636363636363634, 0.69272727272727264)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.98840909090909079, 0.66909090909090907)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.98409090909090913, 0.65636363636363637)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99636363636363634, 0.68818181818181812)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.9872727272727273, 0.66909090909090907)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.9829545454545453, 0.65272727272727271)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99954545454545463, 0.73363636363636364)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818191)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69999999999999996)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.69272727272727275)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.9877272727272729, 0.67000000000000004)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98272727272727278, 0.65636363636363637)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99636363636363634, 0.69545454545454555)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.98818181818181805, 0.67636363636363639)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.9838636363636365, 0.66181818181818186)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.73090909090909095)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71818181818181814)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70363636363636362)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.69545454545454555)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98772727272727268, 0.68181818181818188)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98181818181818181, 0.65999999999999992)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.72727272727272729)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818168)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69363636363636361)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.6963636363636363)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98704545454545445, 0.67454545454545456)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98136363636363644, 0.65999999999999992)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72818181818181826)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71363636363636362)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70272727272727276)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.89068181818181813, 0.6709090909090909)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.77386363636363631, 0.66272727272727272)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.75454545454545452, 0.66000000000000003)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99931818181818188, 0.71545454545454545)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69454545454545458)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68818181818181812)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.90000000000000002, 0.67636363636363639)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.78136363636363648, 0.67090909090909101)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.75568181818181812, 0.66636363636363627)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99931818181818188, 0.71454545454545448)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68636363636363629)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68545454545454543)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.82113636363636355, 0.68000000000000005)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.74659090909090897, 0.67363636363636359)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.7350000000000001, 0.67818181818181822)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99931818181818188, 0.71363636363636362)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.68454545454545457)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71545454545454545)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68636363636363629)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.82545454545454544, 0.67909090909090908)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.73272727272727267, 0.67363636363636359)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.72045454545454546, 0.67909090909090908)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.71363636363636362)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.6963636363636363)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.68454545454545457)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.71272727272727265)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69090909090909092)
+
+
+([<function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.68272727272727274)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 2)
+Accuracy: (0.99909090909090903, 0.70272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 4)
+Accuracy: (0.99795454545454554, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>], 5)
+Accuracy: (0.99795454545454554, 0.69909090909090899)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.99795454545454554, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.9977272727272728, 0.70272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.73272727272727267)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99863636363636366, 0.71272727272727265)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.6963636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99909090909090903, 0.70363636363636373)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.99795454545454554, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.99795454545454554, 0.69818181818181824)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99954545454545463, 0.73272727272727267)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.6990909090909091)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.71272727272727265)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.69999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.73181818181818181)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.69818181818181824)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99954545454545463, 0.73272727272727267)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71545454545454545)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99840909090909091, 0.70545454545454533)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.98590909090909096, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.98000000000000009, 0.70909090909090911)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.71000000000000019)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68999999999999995)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68727272727272726)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99749999999999994, 0.71090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98568181818181821, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97977272727272724, 0.70363636363636373)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99954545454545463, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68454545454545457)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68727272727272726)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99181818181818182, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.97727272727272718, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97204545454545455, 0.70545454545454556)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454555)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69272727272727275)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.71454545454545459)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69181818181818178)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68272727272727274)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.71181818181818191)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.97886363636363638, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97204545454545455, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.70818181818181825)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69636363636363652)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69090909090909081)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69636363636363641)
+
+
+([<function token_features at 0x7f791dd047b8>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.68909090909090909)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99636363636363634, 0.69181818181818178)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.98840909090909079, 0.66727272727272724)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.98409090909090913, 0.65636363636363637)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99977272727272726, 0.73363636363636364)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71636363636363631)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69818181818181824)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.69090909090909092)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98818181818181827, 0.67636363636363639)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98318181818181816, 0.65909090909090906)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99977272727272726, 0.73181818181818181)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71090909090909093)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69727272727272727)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.68636363636363629)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98772727272727268, 0.66909090909090907)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98295454545454553, 0.6581818181818182)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99977272727272726, 0.73090909090909095)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.70909090909090922)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.7018181818181819)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99909090909090903, 0.73090909090909084)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71636363636363642)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70090909090909093)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.69000000000000006)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98772727272727268, 0.67272727272727284)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98250000000000015, 0.65818181818181809)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72545454545454546)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71454545454545448)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70636363636363642)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72545454545454535)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.70999999999999996)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70090909090909082)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99931818181818188, 0.71454545454545448)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.69363636363636361)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68818181818181812)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.90068181818181825, 0.67818181818181811)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.78227272727272723, 0.66999999999999993)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.75590909090909086, 0.66727272727272735)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99931818181818188, 0.71727272727272728)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69272727272727264)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.6890909090909092)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99931818181818188, 0.71272727272727276)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454555)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.6836363636363636)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72090909090909094)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.6836363636363636)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 2)
+Accuracy: (0.99909090909090903, 0.7018181818181819)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 4)
+Accuracy: (0.99795454545454554, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>], 5)
+Accuracy: (0.99795454545454554, 0.69818181818181801)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.73545454545454536)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.70545454545454545)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.70272727272727264)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.69545454545454533)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.72909090909090912)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70363636363636373)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.7018181818181819)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.69636363636363652)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.69454545454545458)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.73181818181818181)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99931818181818188, 0.73272727272727267)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818168)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.70909090909090922)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.70000000000000007)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99954545454545463, 0.73181818181818181)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71000000000000008)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99954545454545463, 0.73000000000000009)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818191)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69909090909090899)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.71272727272727276)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.68909090909090909)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.68818181818181823)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99749999999999994, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98545454545454558, 0.70545454545454545)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.97977272727272735, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.71363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69727272727272727)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.70727272727272728)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69454545454545458)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69090909090909081)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69272727272727275)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (0.99954545454545463, 0.73181818181818181)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.71363636363636362)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.69909090909090899)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99636363636363634, 0.6890909090909092)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.98840909090909101, 0.67545454545454553)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.98363636363636364, 0.65727272727272734)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99977272727272726, 0.72727272727272729)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71454545454545459)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70272727272727276)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99931818181818188, 0.72545454545454535)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.70909090909090922)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70363636363636362)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72090909090909094)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71272727272727265)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.7063636363636363)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99909090909090903, 0.72090909090909094)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454544)
+
+
+([<function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69000000000000006)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 2)
+Accuracy: (1.0, 0.73272727272727267)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 4)
+Accuracy: (0.99909090909090903, 0.70999999999999996)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>], 5)
+Accuracy: (0.99909090909090903, 0.70454545454545447)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99886363636363629, 0.7018181818181819)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99795454545454554, 0.69818181818181824)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99795454545454554, 0.69545454545454544)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.73272727272727278)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.72818181818181826)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70454545454545459)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99954545454545463, 0.72818181818181815)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71181818181818179)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70090909090909093)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.71363636363636362)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.69545454545454555)
+
+
+([<function token_features at 0x7f791dd047b8>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.69454545454545458)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (0.99977272727272726, 0.72181818181818191)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.71454545454545459)
+
+
+([<function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70363636363636373)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 2)
+Accuracy: (1.0, 0.72909090909090912)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 4)
+Accuracy: (0.99909090909090903, 0.70909090909090922)
+
+
+([<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function word2vec_features at 0x7f791dd04f28>, <function tfidf_features at 0x7f791dd04d90>, <function afinn_features at 0x7f791dd04c80>], 5)
+Accuracy: (0.99909090909090903, 0.70181818181818179)
+
+
+best cross-validation result:
+{'accuracy': (1.0, 0.73545454545454536), 'features': [<function token_features at 0x7f791dd047b8>, <function token_pair_features at 0x7f791d48f048>, <function parse_tree_features at 0x7f791d48f0d0>, <function pos_tagger_features at 0x7f791dd04ea0>, <function tfidf_features at 0x7f791dd04d90>], 'min_freq': 2}
+
+
+worst cross-validation result:
+{'accuracy': (0.69431818181818172, 0.69454545454545458), 'features': [<function word2vec_features at 0x7f791dd04f28>], 'min_freq': 5}
+
+word2vec model loaded from file.
+mean score: 3.4746 | variance: 0.4046 | stand daviation: 0.6361
+total neutral reviews: 0
+test_reviews: 1200 | test_labels = 1200
+
+word2vec model loaded from file.
+testing accuracy=0.735833
+
+TOP MISCLASSIFIED TEST DOCUMENTS:
+
+
+truth=1 predicted=0 proba=0.999991
+0,33l can at home bought from Beergonzo here is some print at the bottom that says 11/02 but year is not readable dark yellow clear color small white head smells exotic fruits passion fruit spices peppery bit citric lemon grass nice smell full body soft carbonation slick mouthfeel tastes citric lemon grass light caramel bit boozy light dough light onions herbal finishes light to medium bitter with notes of lemon grass citrus and doughy notes quite good one but also a bit on the boozy side overall still quite good to drink
+
+truth=1 predicted=0 proba=0.999914
+Thanks Steve Yes this is an aged review for obvious reasons This was poured into a snifter The appearance was a total jet black color with a thin fingers worth of white to off white foamy head that dissipated at a nice pace The aroma pops the roasty coffee beans to lay upon a ruggedly sweet milk chocolate Sly dark chocolate some vanilla bean Sweet dark fruits Subtle caramel The flavor yields to the sweet side with that rounded rugged roastiness making a good play against that sweet malty chocolatey/caramel taste Semi-sticky sweet to rugged/roasty aftertaste and finish On the palate this one sat about a medium on the body with a fair sipping quality about it Carbonation seems to have dissipated quite a bit with a rugged roasty grip on my tongue somewhat dry Overall very nice Russian Imperial Stout that I could have again but sadly enough well most people know I can only imagine what this was like when it was fresh
+
+truth=1 predicted=0 proba=0.999824
+UPDATED MAR 20 2017 My Bottom Line Tropical fruit and grassy resins ride this New England-style hazy IPL all the way to the easygoing finish Further Personal Perceptions A slice of foam laces around the perfectly cloudy yellowish beige The grassy resins tend to take over the fruitiness in the flavour profile A bit like some Alchemist brews Drinkability is quite high Bitterness levels are rather mild for the style Carbonation is fluffy and soft Cans
+
+truth=1 predicted=0 proba=0.999809
+Draft at Barrel Republic Pours almost clear gold with a frothy off white head Tastes like grapefruit hops bready malt light spice and fruity Light body and low carbonation Smells like grapefruit hops bready malt fruity and light spice
+
+truth=1 predicted=0 proba=0.999752
+Thanks Joel boatsandhoes on talkbeer This was poured into a tulip The appearance was a pale hazy grapefruit rind color with a thin finger-ed white foamy head that dissipated nicely Semi-sticky lacing clings on one side of the glass The smell takes in subtle danky onion laying down a dry bitter to sweet oaty take over some sweet citrus pulp The taste was basically the same bringing about the bitterness a bit stronger in the citrus Definitely a dry bitter aftertaste and really dry finish On the palate this one sat about a light to medium on the body with a decent sessionable feel to it Leans probably more towards a sipping feel Bitterness feels good Overall its a pretty good DIPA definitely a dry one I could see myself coming back to this
+
+truth=1 predicted=0 proba=0.999700
+Bottle from a supermarket in Amsterdam Noord past its best before date but at a price of 1.60  I could not bother Egg-white thick moussy head orangey peach blonde robe Aroma of bubblegum and banana hay apricot dried mango very old dry chili flakes young jenever coriander seed pear dry orange peel mandarin flesh white bread Sweetish fruity onset peach and banana with a very light sourish touch underneath fizzy carbo numbing the tongue a bit cereally rounded malt sweet body lightly caramelly and a tad creamy bit yeasty finish with lots of residual malt sweetness and banana ester as well as a mild grapefruity hop bitter twist some warming wodka-like alcohol and a very late red pepper glow way at the back but surprisingly subtle Too subtle to my taste and that goes for the hops as well I expect much more daring flavors from t Uiltje maybe it was the age of the bottle but this beer came way closer to a Belgian style tripel than to a true DIPA though a restrained New World hop accent was still there  far too restrained for the style that much is clear Perhaps a compromise with Gulpeners classic approach was not the best idea Bit of a disappointment really though technically perfectly decent
+
+truth=1 predicted=0 proba=0.999659
+Thick cloudy dark brown purple color Decent head and lace creamy and brownish Flavors of raisins dark fruits prunes dark grains cherries ginger nutmeg banana yeast herbal spices Very dense sugars barleywine style with bitter festive spices The body is lean with a soft crisp moderate thickness good smoothness Strong finish of ginger bread with thick bitter ester fruits with dense spiciness Quite robust dry and vinous Not too leathery slight earth feel Aged for a year you get a soft bourbon like sensation of cheese Appetizer like strength highly sweet Deeply warming decent freshness while lacking a little of it Very tasty with solid balance in the flavors although overly acidic and coarse Overall high quality craft feels like a Belgian  barley wine crossover Lost my notes on this one so this is just what I remember should drink it again at another new year eve
+
+truth=0 predicted=1 proba=0.999597
+Draft notes from Whole Foods Pours turbid coppery with fluffy off-white head Nose was caramel malt wheat resiny hops tropical fruit Tasted hoppy resiny very smooth with notes of tangerine pineapple melon A solid effort and I cant wait to get to this place Well done guys
+
+truth=1 predicted=0 proba=0.999402
+Black color with mocha head Aroma is quite estery with bright apple notes maybe a hint of white wine and booze Taste starts slightly tart and fruity continues with some acidic notes light earthy notes overall on the sweeter side with a light bitterness on the finish Medium to full bodied smooth feel Overall its decent but not as good as the regular version
+
+truth=1 predicted=0 proba=0.999364
+Pours amber with a slight haze and a medium white head Aroma is citrus light pine and a touch of caramel Taste is moderate bitters with a touch of metallic tartness Medium bodied smooth and almost creamy Nice
+
+total running time:583.393194437027 seconds
