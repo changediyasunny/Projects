@@ -19,7 +19,7 @@ to post and get the bugs, stories, defect etc.
 
 This is python library for validating datasource at CCC environment.
 
-`These applicaitons were developed as a part of my internshp and co-op at CCC Information Services, Chicago.`
+`These applicaitons were developed as a part of my co-op at CCC Information Services, Chicago.`
 
 **`Access will be given on request.`**
 
